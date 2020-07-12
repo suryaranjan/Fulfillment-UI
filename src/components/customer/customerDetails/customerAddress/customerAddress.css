@@ -1,0 +1,151 @@
+/* Customer address card view */
+.MuiPaper-root.customerAddressCardContainer.MuiPaper-elevation3.MuiPaper-rounded {
+    width: 42%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.customerAddressCardContainer .customerAddressTypeLogo svg.MuiSvgIcon-root{
+    font-size: 50px;
+    color: #288497;
+    border: 1px solid #288497;
+    border-radius: 5px;
+    margin: 14px;
+}
+.customerAddressCardContainer.MuiPaper-rounded{
+    border-radius: 10px;
+}
+.customerAddressCardContainer.MuiPaper-elevation3{
+    box-shadow: 0px -1px 0px -1px #36B0C9, 0px 1px 3px 0px #36B0C9, 0px 0px 1px 0px #36B0C9;
+}
+.customerAddressDetails.MuiGrid-item{
+    margin-left: 30px;
+    margin-bottom: 13px;
+}
+.customerAddressDetails h6{
+    font-size: 16px;
+    color: #808080;
+    margin: 18px 0px 11px 0px;
+}
+.customerAddressDetails p{
+    margin: 3px 0px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+}
+.customerAddressEditLogo svg.MuiSvgIcon-root{
+    font-size: 18px;
+    color: #68C4D6;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* customer Address List */
+.customerAddressList{
+    height: 60vh;
+    overflow-y: scroll;
+    margin-top: 5px;
+    width: 100%;
+    margin: auto;
+}
+.customerAddressList::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+}
+.customerAddressList::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.customerAddressList::-webkit-scrollbar-thumb
+{
+	background-color: #D8A0B0;
+}
+
+/* Customer address add button */
+.customerAddressAdd button{
+    float: right;
+    margin-right: 2px;
+    border: 1px solid;
+    color: #1B5865;
+    border-color: #1B5865;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: none;
+}
+
+/* Customer Address form */
+.customerAddressFormEdit{
+    display: flex;
+}
+.customerAddressFormEdit.customerInfoHeader h4{
+    margin-top: 11px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.customerAddressFormEdit .MuiCheckbox-colorSecondary.Mui-checked{
+    color: #505050;
+}
+
+.customerAddressFormBox label{
+    display: grid;
+    color: #505050;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.customerAddressFormBox .MuiFormControl-root{
+    width: 100%;
+}
+.customerAddressFormBox .MuiOutlinedInput-input{
+    padding: 12.5px 14px;
+    color: #505050;
+}
+.customerAddressFormBox .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: #505050bf;
+}
+.customerAddressFormBox .Mui-focused.MuiFormLabel-root{
+    color: #505050;
+}
+.customerAddressFormBox .MuiInput-underline.Mui-focused:after{
+    transform: none !important;
+}
+.customerAddressFormBox .MuiInputBase-root.MuiOutlinedInput-root{
+    width: 100%;
+}
+.cancelButton button{
+    float: right;
+    border-radius: 20px;
+    padding: 8px 23px;
+    color: #288497;
+    border-color: #288497;
+    margin-right: 10px;
+}
+.saveButton button{
+    border-radius: 20px;
+    padding: 8px 35px;
+    color: #ffff;
+    border: 1px solid #288497;
+    border-color: #288497;
+    background-color: #288497;
+    margin-left: 10px;
+}
+.customerAddressFormButton{
+    display: flex;
+    width: 99.6%;
+    margin-left: 1px;
+    position: relative;
+    top: 20px;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border: 1px solid #288497;
+    border-bottom: none;
+    border-right: none;
+    background-color: #EBF8FA;
+}
+.customerAddressFormBox .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding: 3px;
+}
+.customerAddressFormBox.addressTypeDropdown .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child{
+    padding: 3px;
+}

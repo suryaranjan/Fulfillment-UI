@@ -1,0 +1,120 @@
+.customerModalForm{
+    z-index: 500;
+    border: 1px solid #288497;
+    border-radius: 8px;
+    position: relative;
+    background: white;
+    width: 98% !important;
+    height: auto;
+    top: 6%;
+    left: 51%;
+    transform: translate(-50%,6%);
+}
+.customerModalFormContainer{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+.customerModalFormCancel.customerModalHeader{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.customerAddressFormButton.customerModalFormButton {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    position: relative;
+    top: -3px;
+    padding-top: 8px;
+    padding-bottom: 0px !important;
+    border: none;
+    border-top: 1px solid #288497;
+    margin-bottom: -2px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #EBF8FA;
+}
+.customerAddressFormButton.customerModalFormButton .cancelButton{
+    padding-bottom: 6px;
+}
+.saveButton .MuiButton-contained:hover, .MuiButton-root:hover, .MuiButton-contained {
+    box-shadow: unset;
+    background-color: #288497;
+}
+.customerModalFormContainer::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+}
+.customerModalHeader{
+    padding: 0px 12px !important;
+    color: #1B5865;
+    font-size: 18px;
+}
+.customerModalHeader h4{
+    margin: 15px 0px 15px 0px;
+}
+.customerModalSubHeader{
+    font-size: 18px;
+    color: #1B5865;
+    font-weight: 500;
+    padding: 0px 12px !important;
+}
+.customerInfoEditForm .customerAddressFormBox.customerModalFormBox{
+    width: 15%;
+}
+.customerAddressFormBox.customerModalFormBox.salutation{
+    width: 8%;
+}
+.customerAddressFormBox.customerModalFormBox.suffix{
+    width: 12%;
+}
+.customerAddressFormBox.customerModalFormBox.gender{
+    width: 13%;
+}
+.customerModalForm.customerInfoContainer .MuiDivider-root.headerDivider{
+    border-top: 1px solid #288497;
+    height: 0px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.customerModalForm.customerInfoContainer .MuiDivider-root.generalDivider{
+    border-top: 1px solid #93C1CB;
+    height: 0px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.customerAddressFormBox.customerModalFormBox.city{
+    width: 30%;
+}
+.customerAddressFormBox.customerModalFormBox.city.addressTypeDropdown{
+    width: 30%;
+    margin-left: 5%;
+}
+.customerAddressFormBox.customerModalFormBox.customerFormAddress1{
+    width: 25%;
+}
+.customerModalFormAddressSection{
+    display: flex;
+}
+.customerInfoEditForm.contactForm .customerFormAddress1{
+     width: 35%;
+}
+.customerInfoEditForm.contactForm .phoneType{
+    width: 20%;
+}
+.customerInfoEditForm.contactForm{
+    margin-bottom: 20px;
+}

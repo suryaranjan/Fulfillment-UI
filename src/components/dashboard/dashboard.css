@@ -1,0 +1,16 @@
+.dashboardContainer.MuiContainer-root{
+    min-height: 83vh;
+    margin-top: 10px;
+    height: 86vh;
+    overflow: auto;
+}   
+.dashboardContainer::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+  }
+  .dashboardBox{
+      display: flex;
+  }
+  .dashboardContainer div.customerInfoBoardContainer{
+    display: flex;
+  }

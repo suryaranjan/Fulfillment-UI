@@ -1,0 +1,99 @@
+nav.hamburgerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  background: #1B5865;
+  z-index: 9999;
+  width: 15em;
+  
+}
+
+nav.hamburgerMenu a{
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  margin: 0px;
+  padding-left: 30px;
+}
+nav.hamburgerMenu a span{
+  display: contents;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+nav.hamburgerMenu a span svg{
+  font-size: 26px;
+  fill: #FFFFFF;
+  stroke: none !important;
+  margin-right: 20px;
+  margin-bottom: 4px !important;
+}
+.navbarHeader{
+  display: flex;
+  margin-bottom: 20px;
+  position: absolute;
+    top: 25px;
+  padding-left: 30px;
+}
+.navbarHeader svg{
+  font-size: 20px;
+    margin-right: 20px;
+}
+.navbarHeader p{
+  margin: 0px;
+  margin-top: -9px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.sideNavTab{
+  position: absolute;
+  top: 20%;
+  width: 100%;
+}
+.sideNavTab span.PrivateTabIndicator-colorSecondary-83{
+  background-color: unset;
+}
+.hamburgerMenuShortcut.hamburgerMenu{
+    width: 74px;
+    position: unset;
+    height: 85.76vh;
+}
+.hideNavbar.hamburgerMenuShortcut.hamburgerMenu{
+  display: none;
+}
+.hamburgerMenuShortcut.hamburgerMenu .sideNavTab{
+  top: 0%;
+}
+nav.hamburgerMenu.hamburgerMenuShortcut a{
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  margin: 0px;
+  min-width: unset;
+  padding: 14px 10px 12px 10px;;
+  text-align: center;
+}
+nav.hamburgerMenu.hamburgerMenuShortcut a span svg{
+  font-size: 26px;
+  fill: #FFFFFF;
+  stroke: none !important;
+  margin-right: unset;
+  margin-bottom: 0px !important;
+  margin: auto;
+}
+nav.hamburgerMenu.hamburgerMenuShortcut a.Mui-selected, nav.hamburgerMenu a.Mui-selected{
+  background: #0E2F35;
+}

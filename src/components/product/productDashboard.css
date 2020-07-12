@@ -1,0 +1,81 @@
+/* Product Dashboard */
+.productFilters .product-name{
+    width: 20%;
+}
+.productFilters .price, .cost, .unit-amount{
+    width: 10%;
+}
+.productListColumnList{
+    padding: 0px 12px !important;
+}
+.productListColumnList p{
+    margin: 0px;
+    float: right;
+    text-decoration: underline;
+    text-decoration-color: #1B5865;
+    color: #1B5865;
+    font-size: 15px;
+    cursor: pointer;
+}
+.productColumnListContainer{
+    position: relative;
+    width: 88%;
+    top: 29.5%;
+    right: 1.1%;
+    border: 1px solid #1B5865;
+    border-radius: 5px;
+    background-color: #ffff;
+    padding: 12px 13px 12px 12px;
+    z-index: 500;
+}
+#simple-popover .MuiPaper-root.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
+    padding: 0px 0px 0px 2px;
+}
+.productColumnItem{
+    display: flex;
+}
+.productColumnItem p{
+    color: #1B5865;
+    font-size: 16px;
+}
+.productColumnItem .MuiCheckbox-colorSecondary.Mui-checked span svg.MuiSvgIcon-root{
+    color: #56bed4;
+}
+.productColumnItem span svg.MuiSvgIcon-root{
+    color: #1B5865;
+}
+.productColumnListHeader{
+    display: flex;
+}
+.productColumnListHeader .MuiGrid-item.MuiGrid-root.listOfColumnHeader{
+    color: #23798c;
+    font-size: 16px;
+    margin-left: 2px;
+}
+.productColumnListHeader .MuiGrid-item.MuiGrid-root svg.MuiSvgIcon-root{
+    font-size:  18px;
+    color: #1B5865;
+}  
+.productColumnItem span.MuiButtonBase-root.MuiIconButton-root.MuiCheckbox-root{
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.productColumnListCheckbox{
+    height: 60vh;
+    overflow-y: scroll;
+}
+.productColumnListCheckbox::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.productColumnListCheckbox::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: #F5F5F5;
+}
+
+.productColumnListCheckbox::-webkit-scrollbar-thumb
+{
+	background-color: #97CBD5;
+}

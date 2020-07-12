@@ -1,0 +1,206 @@
+.customerNoteDetailsBox .customerNoteDetails p{
+    color: #767676;
+    font-size: 16px;
+    font-weight: 600;
+}
+.customerNoteDetailsBox .customerNoteDetails span{
+    margin: 0px 5px;
+}
+.customerNoteDetails{
+    width: 97%;
+    display: flex;
+}
+.customerNoteDetailsBox svg.MuiSvgIcon-root{
+    color: #68C4D6;
+    font-size: 18px;
+}
+ p.customerNotes{
+    margin: 10px 20px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    color: #484848;
+}
+.customerNoteDetailsBox{
+    padding-bottom: 0px !important;
+}
+.customerNoteDate{
+    width: 100%;
+    padding-bottom: 15px;
+    padding-right: 25px;
+}
+.customerNoteDate span{
+    float: right;
+    color: #989898;
+    font-size: 12px;
+}
+.noteAdvanceFilters .MuiSvgIcon-root{
+    margin-top: 5px;
+    margin-right: 7px;
+    color: #1B5865;
+}
+
+/* Customer Note Form */
+
+.customerInfoHeader.customerAddressFormEdit.customerNoteFormIcon{
+    display: flex;
+    justify-content: flex-end;
+}
+.customerNoteForm.MuiGrid-item{
+    border: 1px solid #36B0C9;
+    border-radius: 5px;
+    margin: 7px 16px 7px 13px;
+}
+.customerInfoHeader.customerAddressFormEdit.customerNoteFormIcon .MuiSvgIcon-root{
+    color: #98D7E3;
+    font-size: 20px;
+}
+.customerNoteFormBox .orderFiltersAutoComplete{
+    width: 100%;
+}
+.customerNoteFormBox .orderFiltersAutoComplete .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+    padding: 3px;
+}
+.customerAttachment .attchmentTrigger{
+    border: 1px dashed #50505066;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #50505078;
+    padding-top: 10px;
+}
+.customerAttachment input{
+    display: none;
+}
+.customerNoteFileActionLink{
+    display: flex;
+    justify-content: flex-end;
+}
+.customerNoteFileActionLink label:first-child{
+    margin-right: 20px;
+    color: #005971;
+    text-decoration: underline;
+    text-decoration-color: #005971;
+}
+.customerNoteFileActionLink label:last-child{
+    text-decoration: underline;
+    color: #53bfdc;
+    text-decoration-color: #53bfdc;
+}
+.customerNoteFormBox textarea{
+    min-height: 37px !important;
+    width: 99.45%;
+    overflow: hidden;
+    border-radius: 5px;
+    border-color: #50505066;
+    font-size: 16px;
+    color: #505050;
+}
+.customerNoteFormBox textarea:focus{
+    outline-color: #505050b0;
+}
+.customerNoteTextArea{
+    padding-top: 0px !important;
+}
+.customerNotes .customerNoteSeemore{
+    font-size: 15px;
+    color: #28b6d4;
+    text-decoration: underline;
+    text-decoration-color: #45bed8;
+}
+.customerNoteFormButton.customerAddressFormButton{
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    position: relative;
+    top: 0px;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: none;
+    border-top: 1px solid #288497;
+}
+
+.customerNoteFilters .emailFilter.MuiFormControl-root{
+    width: 31%;
+}
+.customerNoteList{
+    width: 100%;
+    margin-top: 10px;
+}
+.customerNoteCardContainer.MuiPaper-elevation3{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0px -1px 0px -1px #36B0C9, 0px 1px 3px 0px #36B0C9, 0px 0px 1px 0px #36B0C9;
+}
+.customerNoteFirstDetails{
+    display: flex;
+    margin: 7px 0px 0px 7px !important; 
+}
+.customerNoteFirstDetails p{
+    margin: 0px;
+    color: #BFBFBF;
+    font-size: 13px;
+}
+.customerNoteFirstDetails .verticalLine{
+    width: 1px;
+    vertical-align: middle;
+    height: 14px;
+    margin: 0px 6px;
+    bNote-left: 2px solid #98012e;
+}
+.customerNoteFirstDetails span{
+    color: #484848;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.customerNoteShippingLogo{
+    width: 6%;
+}
+.customerNoteShippingLogo img{
+    width: 100%;
+}
+.customerNoteSecondDetails{
+    margin: 0px !important;
+    padding: 0px 0px 5px 20px !important;
+    display: flex;
+    color: #767676;
+    font-size: 18px;
+    margin-bottom: 14px !important;
+}
+.customerNoteSecondDetails h4{
+    margin: 0px;
+    color: #767676;
+}
+.customerNoteSecondDetails p{
+    margin: 0px;
+    margin-left: 20px;
+}
+.customerNoteList{
+    height: 55vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5px;
+    width: 100%;
+}
+.customerNoteList::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+}
+.customerNoteList::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.customerNoteList::-webkit-scrollbar-thumb
+{
+	background-color: #D8A0B0;
+}
+.customerNoteFilters.noteFilters .MuiAutocomplete-root{
+    width: 20%;
+}
+.customerNoteFilters.noteFilters > div{
+    width: 20%;
+}

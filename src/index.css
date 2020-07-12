@@ -6,8 +6,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+html, body
+{
+    height: 100%;
+    width: 100%;
+    overflow: auto !important;
+}
+body::-webkit-scrollbar {
+  width: 0px;
+  background-color: #F5F5F5;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.MuiTabs-indicator{
+  background-color: unset !important;
+}
+@media (min-width: 600px){
+  .dashboardContainer.MuiContainer-root {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.MuiAutocomplete-hasPopupIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"], .MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+  padding-right: 0px !important;
 }

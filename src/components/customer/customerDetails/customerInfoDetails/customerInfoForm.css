@@ -1,0 +1,38 @@
+/* Customer Edit Form */
+.customerInfoEditForm{
+    display: flex;
+    justify-content: space-between;
+}
+.customerInfoEditForm .customerAddressFormBox{
+    padding: 0px !important;
+    width: 28%;
+}
+.customerInfoEditForm .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding: 3px;
+}
+.customerInfoEditForm .MuiAutocomplete-hasPopupIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"],.customerInfoEditForm .MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+    padding-right: 0px;
+}
+.customerInfoEditForm .salutation{
+    width: 12%;
+}
+.customerInfoEditContainer.customerInfoContainer .MuiDivider-root{
+    border-top: 1px solid #93C1CB;
+    margin-top: 12px;
+}
+.customerAllergiesBox{
+    width: 100% !important;
+}
+.customerInfoFormButton {
+    display: flex;
+    width: 99.5%;
+    top: 11px;
+    margin-left: 1px;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #288497;
+    border-radius: 0px 0px 5px 5px;
+    border-bottom: none;
+    background-color: #EBF8FA;
+}

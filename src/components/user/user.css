@@ -1,0 +1,28 @@
+.userAdvanceFilter.orderAdvanceFilters .email,.username{
+    width: 27%;
+}
+
+/* User List */
+.userListTable .userTableActionColumn{
+    width: 25%;
+}
+.userListTable .userTableRolesColumn{
+    width: 25%;
+}
+.userTableAction .userTableActionItems svg.MuiSvgIcon-root{
+    display: block;
+    font-size: 20px;
+    margin: auto;
+    color: #97CBD5;
+}
+.userTableAction .userTableActionItems span{
+    font-size: 11px;
+    color: #36B0C9;
+}
+.userListTable .userTableAction{
+    display: flex ;
+    justify-content: space-between;
+}
+.userTableActionItems{
+    margin: 0px 1px;
+}
