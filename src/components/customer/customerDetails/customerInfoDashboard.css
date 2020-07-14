@@ -115,7 +115,7 @@
     fill: #10D60C;
 }
 .customerDetailsInfo.customerOrderDetailsInfo{
-    width: 94.3%;
+    width: 93.8%;
 }
 
 
@@ -128,7 +128,10 @@
     border-radius: 5px;
 }
 .customerDetailsAlertNotes.orderDashboardWithAlert{
-    width: 3%;
+    width: 3.5%;
+}
+.customerDetailsAlertNotes.orderDashboardWithAlert .customerAlertMessage .customerAlertHeader.customerOrderAlertHeader svg{
+    margin: auto;
 }
 .customerDetailsAlertNotes.orderDashboardWithAlert.customerOrderAlertView{
     width: 20%;
@@ -223,7 +226,7 @@
 
 /* Customer Alerts section */
 .customerAlertMessage{
-    padding: 10px;
+    padding: 10px 0px;
     height: 69vh;
     overflow-y: auto;
     overflow-x: hidden;

@@ -1,0 +1,12 @@
+.customerOrderFilters div.MuiFormControl-root{
+    width: 20%;
+}
+.customerOrderFilters .email{
+    width: 25%;
+}
+.customerOrderFilters .orderFiltersAutoComplete {
+    width: 20%;
+}
+.customerOrderFilters .orderFiltersAutoComplete div.MuiFormControl-root{
+    width: 100%;
+}
