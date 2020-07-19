@@ -6,7 +6,6 @@
     background: white;
     width: 98% !important;
     height: auto;
-    top: 6%;
     left: 51%;
     transform: translate(-50%,6%);
 }
@@ -19,7 +18,7 @@
     overflow-y: scroll;
     top: 0;
     left: 0;
-    z-index: 99999;
+    z-index: 99999999999;
 }
 .customerModalFormCancel.customerModalHeader{
     display: flex;

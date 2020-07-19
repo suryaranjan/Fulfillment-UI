@@ -185,7 +185,13 @@
 
 /* Order Table */
 .orderHistoryTable  tr th{
-    width: 10%;
+    width: 9%;
+}
+.orderHistoryTable  tr th.price{
+    width: 6%;
+}
+.orderHistoryTable  tr th.action{
+    width: 7%;
 }
 
 .orderHistoryTable  tr.MuiTableRow-head{
@@ -209,4 +215,14 @@
     border: 1px solid #1B5865;
     border-radius: 6px;
     box-shadow: 0px 0px 0px 1px #1b58653b;
+}
+.orderHistoryTable .fulfillmentTableAction svg.MuiSvgIcon-root{
+    font-size: 18px;
+    color: #97CBD5;
+    display: block;
+    margin: auto;
+}
+.orderHistoryTable .fulfillmentTableAction span{
+    font-size: 11px;
+    color: #97CBD5;
 }

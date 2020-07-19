@@ -85,7 +85,7 @@ const addressList = [
 
 ]
 
-const CustomerAddressView = (props) => {
+const CustomerAddressListView = (props) => {
     const addressRender = () => {
         return addressList.map( (data, index) => {
             return <CustomerAddressCard key={index} editAddress={props.editAddress} address={data}/>
@@ -109,4 +109,4 @@ const CustomerAddressView = (props) => {
     )
 }
 
-export default CustomerAddressView;
+export default CustomerAddressListView;

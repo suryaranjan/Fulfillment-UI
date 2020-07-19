@@ -1,0 +1,287 @@
+.customerModalForm.orderModalForm{
+    top: 1%;
+}
+.orderModalCustomerInfo .verticalLine{
+    width: 1px;
+    vertical-align: middle;
+    height: 18px;
+    margin: 3px 15px 0px 15px;
+    border-left: 2px solid #36B0C9;
+}
+.orderModalCustomerInfo {
+    display: flex;
+}
+.orderModalForm.customerInfoContainer .MuiDivider-root{
+    border-top: 1px solid #288497;
+    height: 0px;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.orderModalCustomerInfo h4{
+    margin: 0px;
+    color: #1B5865;
+    font-size: 18px;
+    margin-top: 0px;
+}
+.orderModalCustomerInfo p:first-of-type{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #484848;
+    margin-top: 2px;
+}
+.orderModalCustomerInfo p{
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #484848;
+    margin-top: 1px;
+}
+.orderModalCustomerInfo  p:last-of-type{
+    margin: 0px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #484848;
+}
+.orderModalCustomerInfo svg.MuiSvgIcon-root{
+    font-size: 20px;
+    color: #2E96AB;
+}
+.orderModalTabActionContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.orderModalTabAction .bottomSecAction p {
+    margin: 0px;
+    margin-top: 5px;
+    color: #005971;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.orderModalTabAction .bottomSec {
+    font-size: 16px;
+    font-weight: 600;
+    color: #484848;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+.orderModalTabAction .supHeader p:last-child {
+    text-decoration: underline;
+    color: #005971;
+    font-size: 14px;
+    font-weight: 600;
+}
+.orderModalTabAction .supHeader p {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #767676;
+    letter-spacing: 1px;
+}
+.orderModalTabAction.lastTag{
+    max-width: unset; 
+     flex-basis: unset;
+}
+.orderModalTabAction.lastTag .supHeader p:last-child {
+    margin: 0px;
+    font-size: 14px;
+    color: #767676;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: auto;
+}
+.orderModalTabAction.lastTag{
+    display: flex;
+    flex-direction: column;
+}
+.orderModalTabAction.lastTag .bottomSec{
+    text-align: right;
+}
+.orderModalTabAction .supHeader {
+    display: flex;
+    justify-content: space-between;
+}
+ .MuiAutocomplete-popper{
+    z-index: 9999999999 !important;
+}
+.discountDropdown .discountArrowDown{
+    color: #cbe4e9;
+}
+.discountDropdown.customerOrderFilters.orderFilters{
+    padding: 10px 12px !important;
+    background: #288497;
+}
+.discountDropdown .orderFiltersAutoComplete .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    border: 1.3px solid #ffffff;
+    color: #ffffff;
+}
+.discountDropdown .orderFiltersAutoComplete .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] input::placeholder{
+    /* border: 1px solid #ffffff; */
+    color: #ffffff;
+}
+.discountDropdown > button:last-child{
+    color: #ffff;
+    border: 1px solid #ffff;
+    font-size: 14px;
+}
+.discountDropdown .orderFiltersAutoComplete{
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+}
+.discountDropdown.customerOrderFilters .orderFiltersAutoComplete div.MuiFormControl-root {
+    width: 85%;
+}
+.discountDropdown .helpTag{
+    color: #ffffffb0;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+/* Product Tab */
+.productTab > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: inherit;
+    align-self: flex-end;
+}
+.productTab {
+    padding: 6px 6px 6px 10px;
+    border: 1px solid #288497;
+    display: flex;
+    flex-direction: row;
+    border-top: none;
+    border-left: none;
+    flex-wrap: inherit;
+}
+.productTab > div  .productFilter{
+    width: 55%;
+}
+.productTab > div  .productFilter  .MuiFormControl-root{
+    margin: 0px;
+}
+.productTab > div  .productFilter  .MuiFormControl-root .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding: 1px !important;
+}
+.productFilter .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border: 1px solid;
+    border-color: rgb(46, 45, 45);
+}
+.productTab > div  .quantityFilter,.discountFilter.productFilter{
+    width: 11% !important;
+}
+.MuiGrid-spacing-xs-3 > .MuiGrid-item.productTabContainer {
+    padding: 0px ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    align-content: flex-start;
+    height: 50vh;
+    overflow-y: scroll;
+}
+.productTabContainer::-webkit-scrollbar {
+    width: 1px;
+    background-color: #F5F5F5;
+}
+.productTabContainer::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.productTabContainer::-webkit-scrollbar-thumb
+{
+	background-color: #55c9e1;
+}
+.productTab > div  p{
+    margin: 0px;
+    align-self: center;
+    margin-bottom: 2px;
+    color: #484848;
+    font-size: 15px;
+    font-weight: 500;
+}
+.productTab > div  > svg.MuiSvgIcon-root:last-of-type{
+    align-self: center;
+    color: #54b3c6;
+}
+.productTab > div.productTabError{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: unset;
+}
+.productTab > div.productTabError svg.MuiSvgIcon-root{
+    color: #E71D36;
+    margin-right: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.productTab > div.productTabError p{
+    margin: 0px;
+    color: #E71D36;
+    font-size: 13px;
+    font-weight: 500;
+}
+.warningProductTab{
+    background: #FFE0E4;
+}
+
+/* Order Modal Footer */
+.orderModalFooter{
+    display: flex;
+    background: #EBF8FA;
+    border-top: 1px solid #36B0C9;
+}
+.orderModalFooter .footerActionItem{
+    margin-right: 25px;
+    
+}
+.orderModalFooter .footerActionItem.lastFooterTag p:last-child{
+    font-size: 13px ;
+}
+.orderModalFooter .footerActionItem.lastFooterTag:nth-child(6){
+    margin-left: auto;
+}
+.lastFooterTag{
+    text-align: center;
+}
+.orderModalFooter .footerActionItem p{
+    margin: 0px;
+    color: #455F64;
+    font-size: 14px;
+    font-weight: 500;
+}
+.orderModalFooter .footerActionItem p:last-child{
+    margin: 0px;
+    font-size: 18px;
+    color: #0D2C32;
+    font-weight: 600;
+}
+.footerActionItem.submitOrder{
+    margin-right: 0px;
+}
+.footerActionItem button{
+    background: #0D2C32;
+    color: #ffff;
+}
+.footerActionItem button.MuiButton-root:hover{
+    background: #061c20;
+}
+
+/* Order Details change */
+.customerModalForm.orderDetailsInfo{
+    transform: translate(-50%,10%);
+    width: 70% !important;
+    padding: 10px;
+    height: 75vh;
+}
+.orderDetailsInfo .customerInfoContainer{
+    height: fit-content;
+}

@@ -9,15 +9,13 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import order from '../../../constants/images/orderLogo';
 import CustomerInfo from './customerInfoDetails/customerInfo';
 import CustomerAlertMessageBox from './customerInfoDetails/customerAlertMessageBox';
-import CustomerAddressView from './customerAddress/customerAddressView';
-import CustomerPaymentView from './customerPayment/customerPaymentView';
 import CustomerOrdeListView from './customerOrder/customerOrderListView';
 import CustomerNoteListView from './customerNotes/customerNoteListView';
-import CustomerAddressForm from './customerAddress/customerAddressForm';
-import CustomerCreditCardForm from './customerPayment/customerCreditCardForm';
-import CustomerInfoForm from './customerInfoDetails/customerInfoForm';
+import CustomerAddress from './customerAddress/customerAddress';
+import CustomerCreditCard from './customerCreditCard/customerCreditCard';
 import Button from '@material-ui/core/Button';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import CreateOrderModalForm from '../../order/createOrder/createOrderModalForm';
 import './customerInfoDashboard.css';
 
 const customer = {
@@ -33,26 +31,15 @@ class CustomerInfoDashboard extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            tabSelected: 3,
-            editAddress: true,
-            editPayment: false,
-            editInfo: false,
-            orderAlertView: false
+            tabSelected: 0,
+            orderAlertView: false,
+            orderModalView: false
         }
     }
 
     handleTabChange = (event, newValue) => {
         this.setState({
             tabSelected: newValue,
-            editPayment: false,
-            editAddress: false,
-            editInfo: false
-        });
-    }
-
-    handleEditAddress = () => {
-        this.setState({
-            editAddress: true
         });
     }
 
@@ -62,22 +49,23 @@ class CustomerInfoDashboard extends React.Component{
         })
     }
 
-    handleEditInfo = () => {
-        this.setState({
-            editInfo: true
-        })
-    }
+   
     handleOrderAlertView = (value) => {
         this.setState({
             orderAlertView: value
-        }, () => {
-            console.log("comingg", this.state.orderAlertView)
+        })
+    }
+
+    handleOrderModal = () => {
+        this.setState({
+            orderModalView: !this.state.orderModalView
         })
     }
     
     render(){
         return (
             <>
+                {this.state.orderModalView && <CreateOrderModalForm modalView={this.state.orderModalView} modalClose={this.handleOrderModal}/>}
                 <Grid container spacing={3} className="customerInfoTagContainer">
                     <Grid item xs={9} className="customerInfoTag">
                         <FiberManualRecordIcon/>
@@ -120,20 +108,17 @@ class CustomerInfoDashboard extends React.Component{
                     </Grid>
                     <div className="customerTabContent">
                         <div className={`customerDetailsInfo ${this.state.tabSelected === 3 ? 'customerOrderDetailsInfo': ''}`}>
-                            {this.state.tabSelected === 0 && (this.state.editInfo !== true ?
-                                <CustomerInfo editInfo={this.handleEditInfo}/> 
-                                : <CustomerInfoForm/> ) 
-                            }
-                            {this.state.tabSelected === 1 && (this.state.editAddress !== true ?
-                                <CustomerAddressView editAddress={this.handleEditAddress}/> 
-                                : <CustomerAddressForm/> )
-                            }
-                            {this.state.tabSelected === 2 && (this.state.editPayment !== true ?
-                                <CustomerPaymentView editPayment={this.handleEditPayments}/> 
-                                : <CustomerCreditCardForm/>
-                            )}
-                            {this.state.tabSelected === 3 && <CustomerOrdeListView/> }
+                            
+                            { this.state.tabSelected === 0 && <CustomerInfo/> }
+                            
+                            { this.state.tabSelected === 1 && <CustomerAddress/> }
+                            
+                            { this.state.tabSelected === 2 && <CustomerCreditCard/> }
+                            
+                            {this.state.tabSelected === 3 && <CustomerOrdeListView modalView={this.state.orderModalView} handleOrderModalView={this.handleOrderModal}/> }
+                            
                             {this.state.tabSelected === 4 && <CustomerNoteListView/> }
+
                         </div>
                         <div className={`customerDetailsAlertNotes ${this.state.tabSelected === 3 && 'orderDashboardWithAlert'} ${this.state.orderAlertView ? 'customerOrderAlertView' : ''}`}>
                             <CustomerAlertMessageBox orderView={this.state.tabSelected === 3 ? true : false} setOrderAlertView={this.handleOrderAlertView}/>

@@ -145,7 +145,7 @@ const CustomerOrdeListView = (props) => {
     
     const renderOrderList = () => {
         return customerOrder.map( (data, index) => {
-            return <CustomerOrderCardView key={index} order={data}/>
+            return <CustomerOrderCardView handleOrderModalView={props.handleOrderModalView} key={index} order={data}/>
         })
     }
 
@@ -181,7 +181,7 @@ const CustomerOrdeListView = (props) => {
                             <SearchIcon />
                         </IconButton>
                         <InputBase className="searchBar"
-                            placeholder="Search Note"
+                            placeholder="Search Order"
                         />
                         <IconButton  aria-label="directions" onClick={handleAdvanceFilter} className="filterOption">
                             <FilterListIcon  />

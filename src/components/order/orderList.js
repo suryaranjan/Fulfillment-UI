@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import Paper from '@material-ui/core/Paper';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import TablePaginationActions from '../sharedComponent/tablePaginationActions';
 import { orderListData } from '../../constants/orderListData';
 
@@ -35,15 +36,16 @@ const OrderHistoryTable = (props) => {
                     <TableRow>
                         <TableCell>ORDER ID</TableCell>
                         <TableCell align="left">ORDER TYPE</TableCell>
-                        <TableCell align="left">CUSTOMER NAME</TableCell>
-                        <TableCell align="left">LAST DATE CHANGED</TableCell>
+                        <TableCell align="left">USERNAME</TableCell>
+                        <TableCell align="left">LAST CHANGED BY</TableCell>
                         <TableCell align="left">TRACKING#</TableCell>
                         <TableCell align="left">SHIPPING METHOD</TableCell>
                         <TableCell align="left">SHIPPING DATE</TableCell>
                         <TableCell align="left">PAYMENT TYPE</TableCell>
-                        <TableCell align="left">LAST 4 DIGITS</TableCell>
-                        <TableCell align="left">SUBTOTAL</TableCell>
-                        <TableCell align="left">TOTAL</TableCell>
+                        <TableCell align="left" className="price">LAST 4 DIGITS</TableCell>
+                        <TableCell align="left" className="price">SUBTOTAL</TableCell>
+                        <TableCell align="left" className="price">TOTAL</TableCell>
+                        <TableCell align="center" className="action">ACTIONS</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -56,20 +58,26 @@ const OrderHistoryTable = (props) => {
                                 {row.id}
                             </TableCell>
                             <TableCell align="left">{row.orderType}</TableCell>
-                            <TableCell align="left">{row.customerName}</TableCell>
-                            <TableCell align="left">{row.shippingDate}</TableCell>
+                            <TableCell align="left">{row.userName}</TableCell>
+                            <TableCell align="left">{row.lastChangedBy}</TableCell>
                             <TableCell align="left">{row.trackingNo}</TableCell>
                             <TableCell align="left">{row.shippingMethod}</TableCell>
                             <TableCell align="left">{row.shippingDate}</TableCell>
                             <TableCell align="left">{row.paymentType}</TableCell>
                             <TableCell align="left">{row.last4Digits}</TableCell>
-                            <TableCell align="left">{row.subTotal}</TableCell>
-                            <TableCell align="left">{row.total}</TableCell>
+                            <TableCell align="left">{`$${row.subTotal}`}</TableCell>
+                            <TableCell align="left">{`$${row.total}`}</TableCell>
+                            <TableCell align="center">
+                                <div className="fulfillmentTableAction">
+                                    <AssignmentTurnedInIcon/>
+                                    <span>Fulfill Order</span> 
+                                </div>
+                            </TableCell>
                         </TableRow>
                     ))}
                     {emptyRows > 0 && (
                         <TableRow >
-                            <TableCell colSpan={11} />
+                            <TableCell colSpan={12} />
                         </TableRow>
                     )}
                 </TableBody>

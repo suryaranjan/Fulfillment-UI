@@ -69,7 +69,7 @@ class CustomerNoteForm extends React.Component {
                     <label >Note</label>
                     <TextareaAutosize aria-label="empty textarea" placeholder="Empty" />
                 </Grid>
-                <div className="customerAddressFormButton customerNoteFormButton">
+                <Grid item xs={12} className="customerAddressFormButton customerNoteFormButton">
                     <Grid item xs={6}  className="customerAddressFormBox cancelButton">
                         <Button variant="outlined" onClick={this.props.deleteNote}>
                             Cancel
@@ -80,7 +80,7 @@ class CustomerNoteForm extends React.Component {
                             Save
                         </Button>
                     </Grid>
-                </div>
+                </Grid>
             </Grid>
         )
     }

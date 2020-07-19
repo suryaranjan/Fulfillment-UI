@@ -17,6 +17,7 @@ import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CloseIcon from '@material-ui/icons/Close';
 import Popover from '@material-ui/core/Popover';
 import { productFilter, productColumn } from '../../constants/dropdownConstant';
+import ProductModalForm from './createProduct/createProductModalForm';
 import './productDashboard.css';
 
 class ProductDashboard extends React.Component{
@@ -28,7 +29,7 @@ class ProductDashboard extends React.Component{
             productModalForm: false,
             productColumnListView: false,
             productListAnchorEl: null,
-            productColumnList: productColumn
+            productColumnList: productColumn,
         }
         this.wrapperRef = React.createRef(null);
         this.eleRef = React.createRef(null);
@@ -112,6 +113,7 @@ class ProductDashboard extends React.Component{
         
         return(
             <>
+                <ProductModalForm modalView={this.state.productModalForm} modalClose={this.handleModalShow} />
                  <Grid container spacing={3}>
                     <Grid item xs={10} className="orderListDropdown">
                         <h3>Showing All :</h3>

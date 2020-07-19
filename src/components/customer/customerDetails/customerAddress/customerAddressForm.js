@@ -167,7 +167,7 @@ class CustomerAddressForm extends React.Component{
                         )}
                     />
                 </Grid>
-                <div className="customerAddressFormButton">
+                <Grid item xs={12} className="customerAddressFormButton">
                     <Grid item xs={6}  className="customerAddressFormBox cancelButton">
                         <Button variant="outlined" >
                             Cancel
@@ -178,7 +178,7 @@ class CustomerAddressForm extends React.Component{
                             Save
                         </Button>
                     </Grid>
-                </div>
+                </Grid>
             </Grid>
         )
     }

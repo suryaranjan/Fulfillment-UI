@@ -23,10 +23,12 @@
 .customerAllergiesBox{
     width: 100% !important;
 }
+
 .customerInfoFormButton {
+    background: #EBF8FA;
     display: flex;
-    width: 99.5%;
-    top: 11px;
+    width: calc(100% - 4px);
+    top: 7px;
     margin-left: 1px;
     position: relative;
     padding-top: 8px;
@@ -34,5 +36,5 @@
     border: 1px solid #288497;
     border-radius: 0px 0px 5px 5px;
     border-bottom: none;
-    background-color: #EBF8FA;
+    border-right: none;
 }

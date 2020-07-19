@@ -49,7 +49,7 @@ const customerCreditCards = [
     }
 ]
 
-const CustomerPaymentView = (props) => {
+const CustomerCreditCardListView = (props) => {
 
     const creditCardRender = () => {
         return customerCreditCards.map( (data, index) => {
@@ -74,4 +74,4 @@ const CustomerPaymentView = (props) => {
     )
 }
 
-export default CustomerPaymentView;
+export default CustomerCreditCardListView;

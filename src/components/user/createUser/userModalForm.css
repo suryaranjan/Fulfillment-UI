@@ -14,7 +14,14 @@
     margin-bottom: 10px;
 }
 .customerModalFormContainer .userModalForm.customerModalForm{
-    top: 7%;
+    top: 4%;
+    height: 80vh;
+}
+.userModalForm.customerModalForm > div:first-child{
+    width: 100%;
+}
+.userModalForm.customerModalForm > div:first-child > div{
+    display: flex;
 }
 .userModalFormCheckBox label{
     color: #1B5865;
@@ -33,4 +40,12 @@
 }
 .userModalFormCheckBox span{
     padding-left: 0px;
+}
+.userModalForm.customerModalForm .customerAddressFormButton.customerModalFormButton{
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+    border-top: 1px solid #288497;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #EBF8FA;
 }

@@ -592,32 +592,12 @@ export const productColumn = [
 export const userModalCheckBox = [
     {
         id: 0,
-        title: 'Partner Admin'
+        title: 'Super Admin'
     },
     {
         id: 1,
-        title: 'Center Admin'
-    },
-    {
-        id: 2,
-        title: 'Pharmacist'
-    },
-    {
-        id: 3,
-        title: 'CSR'
-    },
-    {
-        id: 4,
-        title: 'Agent'
-    },
-    {
-        id: 5,
-        title: 'EPCS'
-    },
-    {
-        id: 6,
-        title: 'Locked'
-    },
+        title: 'Shipping Admin'
+    }
 ]
 
 export const gender = [

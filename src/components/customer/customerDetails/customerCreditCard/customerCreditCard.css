@@ -61,19 +61,13 @@ h4.customerCreditCardDetails span{
 .customerCreditCardReferencezNote{
     margin-top: 20px !important;
 }
-.customerAddressFormButton.customerCrediCardFormButton
+.customerAddressFormButton.MuiGrid-item.MuiGrid-grid-xs-12.customerCrediCardFormButton
 {
-    display: flex;
-    width: 99.6%;
-    margin-left: 1px;
-    position: relative;
-    top: 92px;
-    border-radius: 0px 0px 5px 5px;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    border: 1px solid #288497;
-    border-bottom: none;
-    border-right: none;
+    background: #EBF8FA;
+    bottom: -92px;
+}
+.orderDetailsInfo .customerInfoContainer .customerAddressFormButton.MuiGrid-item.MuiGrid-grid-xs-12.customerCrediCardFormButton {
+    bottom: -112px;
 }
 .customerCreditCardReferencezNote .MuiOutlinedInput-input{
     border: 1px #505050;

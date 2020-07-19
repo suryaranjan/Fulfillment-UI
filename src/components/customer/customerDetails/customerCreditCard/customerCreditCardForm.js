@@ -122,7 +122,7 @@ class  CustomerCreditCardForm extends React.Component{
                           }}
                     />
                 </Grid>
-                <div className="customerAddressFormButton customerCrediCardFormButton">
+                <Grid item xs={12} className="customerAddressFormButton customerCrediCardFormButton">
                     <Grid item xs={6}  className="customerAddressFormBox cancelButton">
                         <Button variant="outlined" >
                             Cancel
@@ -133,7 +133,7 @@ class  CustomerCreditCardForm extends React.Component{
                             Save
                         </Button>
                     </Grid>
-                </div>
+                </Grid>
             </Grid>
         )
     }

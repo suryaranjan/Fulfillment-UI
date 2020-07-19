@@ -4,11 +4,11 @@ import { CUSTOMER_DASHBOARD, ORDER_DASHBOARD, PRODUCT_DASHBOARD, USER_DASHBOARD,
 import { Link } from "react-router-dom";
 import Tabs from '@material-ui/core/Tabs';
 import CloseIcon from '@material-ui/icons/Close';
-import { DashboardNav, DashboardNavSelected } from '../../constants/images/dashboardNav';
-import { FulfillmentNav, FulfillmentNavSelected } from '../../constants/images/fulfillmentNav';
-import { CustomerNav, CustomerNavSelected } from '../../constants/images/customerNav';
-import { ProductNav, ProductNavSelected } from '../../constants/images/productsNav';
-import { UserNav, UserNavSelected } from '../../constants/images/usersNav';
+import { DashboardNav, DashboardNavSelected, 
+      FulfillmentNav, FulfillmentNavSelected,
+      CustomerNav, CustomerNavSelected,
+      ProductNav, ProductNavSelected,
+      UserNav, UserNavSelected } from '../../constants/images/sideNavIcon';
 import { useLocation} from "react-router-dom";
 import './menu.css';
 

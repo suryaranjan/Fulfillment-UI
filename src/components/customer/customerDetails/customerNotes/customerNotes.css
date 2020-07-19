@@ -48,7 +48,7 @@
 .customerNoteForm.MuiGrid-item{
     border: 1px solid #36B0C9;
     border-radius: 5px;
-    margin: 7px 16px 7px 13px;
+    margin: 7px 10px 7px 11px;
 }
 .customerInfoHeader.customerAddressFormEdit.customerNoteFormIcon .MuiSvgIcon-root{
     color: #98D7E3;
@@ -108,17 +108,11 @@
     text-decoration: underline;
     text-decoration-color: #45bed8;
 }
-.customerNoteFormButton.customerAddressFormButton{
-    display: flex;
+.customerNoteFormButton.customerAddressFormButton.MuiGrid-item.MuiGrid-grid-xs-12{
+    flex-basis: calc(100% - 0px);
+    background: #EBF8FA;
     width: 100%;
-    margin-left: 0px;
-    position: relative;
-    top: 0px;
-    border-radius: 0px 0px 5px 5px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    border: none;
-    border-top: 1px solid #288497;
+    bottom: 0px;
 }
 
 .customerNoteFilters .emailFilter.MuiFormControl-root{
