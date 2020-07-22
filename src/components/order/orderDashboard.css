@@ -193,6 +193,9 @@
 .orderHistoryTable  tr th.action{
     width: 7%;
 }
+.orderHistoryTable .fulfillmentAction{
+    padding: 0px;
+}
 
 .orderHistoryTable  tr.MuiTableRow-head{
     background-color: #E1F3F7;

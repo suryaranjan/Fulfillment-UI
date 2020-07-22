@@ -21,7 +21,7 @@
 .orderModalCustomerInfo h4{
     margin: 0px;
     color: #1B5865;
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 0px;
 }
 .orderModalCustomerInfo p:first-of-type{
@@ -187,7 +187,7 @@
     overflow-y: scroll;
 }
 .productTabContainer::-webkit-scrollbar {
-    width: 1px;
+    width: 0px;
     background-color: #F5F5F5;
 }
 .productTabContainer::-webkit-scrollbar-track

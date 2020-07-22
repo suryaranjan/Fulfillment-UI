@@ -11,17 +11,47 @@ import TextField from '@material-ui/core/TextField';
 import CancelIcon from '@material-ui/icons/Cancel';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { IconButton } from '@material-ui/core';
+import FulfillOrderModalForm from '../fulfillment/fulfillOrder/fulfillOrderModalForm';
 import { orderFilters, orderTypeDropdown } from '../../constants/dropdownConstant';
 import OrderHistoryTable from './orderList';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import * as Service from '../../tempService/tempService';
 
 class OrderDashboard extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            orderAdvanceFilter: false
+            orderAdvanceFilter: false,
+            fulfillModalShow: false,
+            orderListData: [],
+            fulfillingOrder: {}
         }
+    }
+
+    componentDidMount (){
+        Service.getAllOrders().then((data) => {
+            this.setState({
+                orderListData: data.data.Response
+            })
+        })
+            
+    }
+
+    handleFulfillModalShow = (orderId) => {
+        if(orderId){
+            Service.getOrderItems(orderId).then(data => {
+                this.setState({
+                    fulfillingOrder: {
+                        orderId : orderId,
+                        products: data.data.Response
+                    }
+                });
+            });
+        }
+        this.setState({
+            fulfillModalShow: !this.state.fulfillModalShow
+        })
     }
 
     handleAdvanceFilter = () => {
@@ -74,53 +104,57 @@ class OrderDashboard extends React.Component{
     }
 
     render(){
+
         return(
-            <Grid container spacing={3}>
-                <Grid item xs={10} className="orderListDropdown">
-                    <h3>Showing All :</h3>
-                    <Select  
-                        defaultValue="" 
-                        variant='standard' 
-                        id="order-status"
-                        IconComponent={ExpandMoreIcon}
-                        native
-                    >
-                        <option value={1}>Pending Orders</option>
-                        <option value={2}>Fulfilled Orders</option>
-                        <option value={3}>Problem Orders</option>
-                        <option value={4}>Processing Orders</option>
-                    </Select>
+            <>
+                {this.state.fulfillingOrder.products ? <FulfillOrderModalForm modalView={this.state.fulfillModalShow} order={this.state.fulfillingOrder} modalClose={this.handleFulfillModalShow}/> : ''}
+                <Grid container spacing={3}>
+                    <Grid item xs={10} className="orderListDropdown">
+                        <h3>Showing All :</h3>
+                        <Select  
+                            defaultValue="" 
+                            variant='standard' 
+                            id="order-status"
+                            IconComponent={ExpandMoreIcon}
+                            native
+                        >
+                            <option value={1}>Pending Orders</option>
+                            <option value={2}>Fulfilled Orders</option>
+                            <option value={3}>Problem Orders</option>
+                            <option value={4}>Processing Orders</option>
+                        </Select>
+                    </Grid>
+                    <Grid item xs={2} className="orderDropdown customerDropdown">
+                        <Button variant="outlined">
+                            Create New Order
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12} className="orderFilters">
+                        { this.state.orderAdvanceFilter ? 
+                            <div className="orderAdvanceFilters">
+                                {this.orderFiltersTextField()}
+                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter}/>
+                            </div>
+                            :
+                            <div className="orderFilterSearch">
+                                <IconButton  aria-label="menu" className="searchIcon">
+                                    <SearchIcon />
+                                </IconButton>
+                                <InputBase className="searchBar"
+                                    placeholder="Search Order"
+                                />
+                                <Divider  orientation="vertical" />
+                                <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
+                                    <FilterListIcon  />
+                                </IconButton> 
+                            </div>
+                        }
+                    </Grid>
+                    <Grid item xs={12} className="orderHistoryTableContainer">
+                        <OrderHistoryTable orderList={this.state.orderListData} fulfillOrder={this.handleFulfillModalShow}/>
+                    </Grid>
                 </Grid>
-                <Grid item xs={2} className="orderDropdown customerDropdown">
-                    <Button variant="outlined">
-                        Create New Order
-                    </Button>
-                </Grid>
-                <Grid item xs={12} className="orderFilters">
-                    { this.state.orderAdvanceFilter ? 
-                        <div className="orderAdvanceFilters">
-                            {this.orderFiltersTextField()}
-                            <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter}/>
-                        </div>
-                        :
-                        <div className="orderFilterSearch">
-                            <IconButton  aria-label="menu" className="searchIcon">
-                                <SearchIcon />
-                            </IconButton>
-                            <InputBase className="searchBar"
-                                placeholder="Search Order"
-                            />
-                            <Divider  orientation="vertical" />
-                            <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
-                                <FilterListIcon  />
-                            </IconButton> 
-                        </div>
-                    }
-                </Grid>
-                <Grid item xs={12} className="orderHistoryTableContainer">
-                    <OrderHistoryTable/>
-                </Grid>
-            </Grid>
+            </>
         )
     }
 }

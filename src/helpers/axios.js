@@ -4,10 +4,7 @@ const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
 }
-const token = localStorage.getItem("access_token");
-if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
-}
+
 const getAxiosInstance = () => {
     // const token = localStorage.getItem('access_token');
     const instance = axios.create({

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 const ModalCloseHelper = ( wrapperRef, modalRef, callBack, childRef) => {
-  console.log("coming", childRef) 
     useEffect(() => {
       /*Alert if clicked on outside of element*/
       const handleClickOutside = (event) => {

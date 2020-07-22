@@ -10,11 +10,11 @@ import TablePagination from '@material-ui/core/TablePagination';
 import Paper from '@material-ui/core/Paper';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import TablePaginationActions from '../sharedComponent/tablePaginationActions';
-import { orderListData } from '../../constants/orderListData';
+// import { orderListData } from '../../constants/orderListData';
 
 
 const OrderHistoryTable = (props) => {
-
+  let orderListData = props.orderList  ? props.orderList : [];
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -35,7 +35,7 @@ const OrderHistoryTable = (props) => {
                 <TableHead>
                     <TableRow>
                         <TableCell>ORDER ID</TableCell>
-                        <TableCell align="left">ORDER TYPE</TableCell>
+                        <TableCell align="left">ORDER DATE</TableCell>
                         <TableCell align="left">USERNAME</TableCell>
                         <TableCell align="left">LAST CHANGED BY</TableCell>
                         <TableCell align="left">TRACKING#</TableCell>
@@ -43,32 +43,32 @@ const OrderHistoryTable = (props) => {
                         <TableCell align="left">SHIPPING DATE</TableCell>
                         <TableCell align="left">PAYMENT TYPE</TableCell>
                         <TableCell align="left" className="price">LAST 4 DIGITS</TableCell>
-                        <TableCell align="left" className="price">SUBTOTAL</TableCell>
+                        <TableCell align="left" className="price">TOTAL PLATFORM FEE</TableCell>
                         <TableCell align="left" className="price">TOTAL</TableCell>
                         <TableCell align="center" className="action">ACTIONS</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {(rowsPerPage > 0
-                        ? orderListData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                        ?orderListData && orderListData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         : orderListData
                         ).map((row) => (
-                        <TableRow key={row.id}>
+                        <TableRow key={row.OrderId}>
                             <TableCell component="th" scope="row">
-                                {row.id}
+                                {row.OrderId}
                             </TableCell>
-                            <TableCell align="left">{row.orderType}</TableCell>
-                            <TableCell align="left">{row.userName}</TableCell>
-                            <TableCell align="left">{row.lastChangedBy}</TableCell>
-                            <TableCell align="left">{row.trackingNo}</TableCell>
-                            <TableCell align="left">{row.shippingMethod}</TableCell>
-                            <TableCell align="left">{row.shippingDate}</TableCell>
-                            <TableCell align="left">{row.paymentType}</TableCell>
-                            <TableCell align="left">{row.last4Digits}</TableCell>
-                            <TableCell align="left">{`$${row.subTotal}`}</TableCell>
-                            <TableCell align="left">{`$${row.total}`}</TableCell>
-                            <TableCell align="center">
-                                <div className="fulfillmentTableAction">
+                            <TableCell align="left">{row.OrderDate}</TableCell>
+                            <TableCell align="left">{row.UserName}</TableCell>
+                            <TableCell align="left">{row.UserName}</TableCell>
+                            <TableCell align="left">{`12234556665433`}</TableCell>
+                            <TableCell align="left">{row.ShippingMethod}</TableCell>
+                            <TableCell align="left">{row.ShippingDate}</TableCell>
+                            <TableCell align="left">{`Credit Card`}</TableCell>
+                            <TableCell align="left">{row.LastFourDigits}</TableCell>
+                            <TableCell align="left">{`$${row.TotalPlatformFee}`}</TableCell>
+                            <TableCell align="left">{`$${row.TotalAmount}`}</TableCell>
+                            <TableCell align="center" className="fulfillmentAction" >
+                                <div className="fulfillmentTableAction" onClick={() => props.fulfillOrder(row)}>
                                     <AssignmentTurnedInIcon/>
                                     <span>Fulfill Order</span> 
                                 </div>
@@ -85,7 +85,7 @@ const OrderHistoryTable = (props) => {
                     <TableRow>
                         <TablePagination
                             rowsPerPageOptions={[ 10, 20, { label: 'All', value: -1 }]}
-                            colSpan={11}
+                            colSpan={12}
                             count={orderListData.length}
                             rowsPerPage={rowsPerPage}
                             page={page}

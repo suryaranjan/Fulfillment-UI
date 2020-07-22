@@ -69,9 +69,7 @@ const CreateOrderModalForm = (props) => {
 
     ModalCloseHelper(wrapperRef, modalRef, closeModal, showSecondaryModal ? true : false); 
 
-    return(
-        <>
-            
+    return( 
             <div className="customerModalFormContainer" ref={wrapperRef} style={{display: showModal ? 'block' : 'none'}}>
             { showSecondaryModal && <CreateOrderChangeDetailsModal showModal={showSecondaryModal} type={secondaryModalEditType} modalClose={closeSeondaryModal}/>}
                 <Grid container spacing={3} backdrop="true" ref={modalRef} keyboard="true"  className="customerInfoContainer customerModalForm orderModalForm">
@@ -199,7 +197,6 @@ const CreateOrderModalForm = (props) => {
                     </Grid>
                 </Grid>
             </div>
-        </>
     )
 }
 
