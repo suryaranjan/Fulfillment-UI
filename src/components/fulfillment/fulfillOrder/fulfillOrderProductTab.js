@@ -1,14 +1,19 @@
 import React from 'react';
+import UndoIcon from '@material-ui/icons/Undo';
 import Grid from '@material-ui/core/Grid';
 
 const FulfillmentOrderProductTab = (props) => {
 
     const productLotName = () => {
         let lots = props.product.LotNumbers.map(lot => {
-            return lot.LotNumber;
+            if(lot.Quantity > 0){
+                return lot.LotNumber;
+            }
+            return;
         })
         return lots.join(', ');
     }
+
     const fulfillmentStatus = ((props.product.fulfilling === 'completed') ? 'fulfilledProduct' 
     : ( props.product.fulfilling === 'inProgress' ? 'fulfillInprogress' : ''));
 
@@ -27,12 +32,18 @@ const FulfillmentOrderProductTab = (props) => {
                     <span>Qty</span>
                     <p>{props.product.Quantity}</p>
                 </div>
-                <div className={`productDetails `}>
+                <div className={`productDetails lotSection`}>
                     <span>Lot#</span>
                     <p className={`${props.product.fulfilledQuantity > 0 ? '' : 'fade'}`}>
                         {props.product.fulfilledQuantity > 0 ? productLotName() : 'Scan to read Code'}
                     </p>
                 </div>
+                <div className="productDetails undoAction"  
+                    style={{visibility: props.product.fulfilledQuantity > 0 ? 'visible': "hidden"}}
+                    onClick={props.undoLotNumbers}>
+                    <UndoIcon/>
+                    <p>Redo Scan</p>
+                </div> 
             </div>
         </Grid>
     )

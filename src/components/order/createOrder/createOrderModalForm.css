@@ -17,6 +17,7 @@
     width: 100%;
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0.12);
+    margin-left: 0px;
 }
 .orderModalCustomerInfo h4{
     margin: 0px;
@@ -92,7 +93,6 @@
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 500;
-    margin-left: auto;
 }
 .orderModalTabAction.lastTag{
     display: flex;
@@ -262,7 +262,7 @@
     margin: 0px;
     font-size: 18px;
     color: #0D2C32;
-    font-weight: 600;
+    font-weight: bolder;
 }
 .footerActionItem.submitOrder{
     margin-right: 0px;

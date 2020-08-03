@@ -157,7 +157,7 @@ class ProductDashboard extends React.Component{
                     <Grid item xs={12} className="productListColumnList">
                         <p onClick={this.handleProductColumnFilterView} aria-describedby='simple-popover'>Customise Columns</p>
                     </Grid>
-                    <Grid item xs={12} className="orderHistoryTableContainer">
+                    <Grid item xs={12} className="orderHistoryTableContainer productTableContainer">
                         { this.state.productColumnListView &&
                             <Popover
                                 ref={this.wrapperRef}

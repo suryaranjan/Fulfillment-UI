@@ -39,6 +39,7 @@ const CreateOrderModalForm = (props) => {
     }
     
     const closeModal = () => {
+        console.log("order complete")
         if(showModal){
             props.modalClose();
         }
@@ -190,7 +191,7 @@ const CreateOrderModalForm = (props) => {
                             <p>{'09:25 PM'}</p>
                         </div>
                         <div className="footerActionItem submitOrder">
-                            <Button variant="outlined">
+                            <Button variant="outlined" onClick={props.placeOrder}>
                                 PLACE ORDER
                             </Button>
                         </div>

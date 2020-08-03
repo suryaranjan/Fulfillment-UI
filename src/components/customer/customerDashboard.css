@@ -47,6 +47,23 @@
     border: 1px solid #1B5865;
     border-radius: 6px;
     box-shadow: 0px 0px 0px 1px #1b58653b;
+    height: 64vh;
+}
+.customerTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.customerTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar
+{
+	width: 2px;
+    background-color: #F5F5F5;
+    height: 3px;
+}
+
+.customerTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar-thumb
+{
+	background-color: #97CBD5;
 }
 .customerDropdown button{
     text-transform: none;

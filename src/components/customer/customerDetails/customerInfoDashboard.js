@@ -16,6 +16,8 @@ import CustomerCreditCard from './customerCreditCard/customerCreditCard';
 import Button from '@material-ui/core/Button';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import CreateOrderModalForm from '../../order/createOrder/createOrderModalForm';
+import OrderCompleteModal from '../../order/createOrder/orderCompleteModal';
+import OrderDetailsModalView from '../../order/orderDetails/orderDetailsView';
 import './customerInfoDashboard.css';
 
 const customer = {
@@ -33,8 +35,25 @@ class CustomerInfoDashboard extends React.Component{
         this.state = {
             tabSelected: 0,
             orderAlertView: false,
-            orderModalView: false
+            orderModalView: false,
+            orderDetailsModalView: false,
+            showOrderPlaced: false
         }
+    }
+
+    handleOrderPlacedModalView = () => {
+        this.setState({
+            orderModalView: false,
+            orderDetailsModalView: !this.state.orderDetailsModalView
+        })
+    }
+
+    handleOrderDetailsModalView = () => {
+        this.setState({
+            orderDetailsModalView: !this.state.orderDetailsModalView,
+            showOrderPlaced: false,
+            orderModalView: false
+        })
     }
 
     handleTabChange = (event, newValue) => {
@@ -65,7 +84,22 @@ class CustomerInfoDashboard extends React.Component{
     render(){
         return (
             <>
-                {this.state.orderModalView && <CreateOrderModalForm modalView={this.state.orderModalView} modalClose={this.handleOrderModal}/>}
+                {this.state.orderModalView ?
+                    <CreateOrderModalForm 
+                        modalView={this.state.orderModalView} 
+                        modalClose={this.handleOrderModal} 
+                        placeOrder={this.handleOrderPlacedModalView}/> : ''
+                }
+                {this.state.showOrderPlaced ?
+                    <OrderCompleteModal completeText={"Order Placed"} 
+                        modalView={this.state.showOrderPlaced}
+                        modalClose={this.handleOrderPlacedModalView}/> : ''
+                }
+                {this.state.orderDetailsModalView ?
+                    <OrderDetailsModalView 
+                        modalView={this.state.orderDetailsModalView}
+                        modalClose={this.handleOrderDetailsModalView}/> : ''
+                }
                 <Grid container spacing={3} className="customerInfoTagContainer">
                     <Grid item xs={9} className="customerInfoTag">
                         <FiberManualRecordIcon/>

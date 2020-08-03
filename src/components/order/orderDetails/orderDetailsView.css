@@ -1,0 +1,29 @@
+.orderDetailsModal .orderModalTabActionContainer{
+    padding: 8px 12px 6px 12px !important;
+}
+.orderDetailsModal.orderModalForm .fulfillModalProductContainer.productTabContainer{
+    flex-basis: 100%; 
+    margin: auto; 
+    border: 0px solid #288497;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    height: 60vh;
+}
+.orderDetailsModal.orderModalForm  .MuiGrid-item.productTabContainer.fulfillmentProductTab{
+    height: 60vh;
+}
+.orderDetailsModal.orderModalForm .fulfillmentProductTab.productTab .productDetails:last-child {
+    width: 23%;
+}
+.orderDetailsModal.orderModalForm .fulfillmentProductTab.productTab .productDetails.productName{
+    width: 50%;
+}
+.orderDetailsModal.orderModalForm .fulfillmentProductTab.productTab .productDetails {
+    width: 10%;
+}
+.orderModalFooter.orderDetailsModal .footerActionItem {
+    margin-right: 30px;
+}
+.orderModalFooter.orderDetailsModal .footerActionItem:last-child{
+    margin-right: 0px;
+}

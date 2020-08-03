@@ -14,14 +14,10 @@
 
 /* Customer Order card View */
 
-.customerOrderList{
-    width: 100%;
-    margin-top: 10px;
-}
-.customerOrderCardContainer.MuiPaper-elevation3{
+.customerOrderList .customerOrderCardContainer.MuiPaper-elevation3{
     width: 100%;
     margin: auto;
-    margin: 25px auto;
+    margin: 8px auto;
     box-shadow: 0px -1px 0px -1px #36B0C9, 0px 1px 3px 0px #36B0C9, 0px 0px 1px 0px #36B0C9;
 }
 .customerOrderFirstDetails{
@@ -128,12 +124,15 @@
     margin: 0px auto;
 }
 
-.customerOrderList{
-    height: 55vh;
+.customerOrderList.MuiGrid-item{
+    height: 57vh;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-top: 5px;
     width: 100%;
+    padding: 0px 12px 12px 12px !important;
+    width: 100%;
+    margin-top: 10px;
 }
 .customerOrderList::-webkit-scrollbar {
     width: 0px;

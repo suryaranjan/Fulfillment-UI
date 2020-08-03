@@ -63,7 +63,7 @@ const PartnerDropdownMenu = (props) => {
     }
 
     const handleOpenDropdown = () => {
-        setDropdown(true);
+        setDropdown(!dropdownOpen);
     }
 
     const handleCloseDropdown = () => {

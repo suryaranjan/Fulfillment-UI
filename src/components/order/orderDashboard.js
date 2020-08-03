@@ -66,8 +66,8 @@ class OrderDashboard extends React.Component{
                     <Autocomplete
                         key={filter.id}
                         className="orderFiltersAutoComplete"
-                        disableClearable
                         defaultValue={0}
+                        closeIcon={<></>}
                         clearOnBlur={false}
                         options={orderTypeDropdown.map((option) => option.title)}
                         renderInput={(params) => (

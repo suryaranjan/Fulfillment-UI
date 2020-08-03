@@ -7,24 +7,23 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import { IconButton } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import ModalCloseHelper from '../../sharedComponent/modalCloseHelper';
 import FulfillmentOrderProductTab from './fulfillOrderProductTab';
 import './fulfillmentModal.css';
 
 const FulfillOrderModalForm = (props) => {
-    console.log("props",props)
-    
     const [scannedProduct, setScannedProduct] = React.useState({});
     const [searchCode, setSearchCode] = React.useState('');
+    const [productList, setProductList] = React.useState([]);
     const [orderFulfilled, setOrderFulfilled] = React.useState(false);
     const [renderLot, setRenderLot] = React.useState();
-    const [showLoader , setShowLoader] = React.useState(false);
+    const [fulfilledRatio, setFulfilledRatio] = React.useState();
     const wrapperRef = useRef(null);
     const modalRef = useRef(null);
     const showModal = props.modalView; 
 
     const formatProductData = () => {
-        console.log("products", {...props})
         if(props.order && props.order.products){
             let fulfilledQuantity = 0;
             let fulfillingStatus = 'started';
@@ -40,10 +39,22 @@ const FulfillOrderModalForm = (props) => {
                     fulfilledQuantity: fulfilledQuantity
                 };
             })
+            setProductList([...products]);
             return products;
         }
     }
     
+    const calculateTotalOrderFulfilledQuantity = (products) => {
+        let tempProductList = products ? [...products] : [...productList];
+        let quantity = 0;
+        let fulfilledQuantity = 0;
+        tempProductList.map(product => {
+            quantity += parseInt(product.Quantity);
+            fulfilledQuantity += parseInt(product.fulfilledQuantity);
+            return product;
+        });
+        setFulfilledRatio(<p className={`${fulfilledQuantity > quantity ? 'error' : ''}`}>{fulfilledQuantity}/{quantity}</p>);
+    }
 
     const checkFulfillingStatus = (product) => {
         let fulfilling = 'started';
@@ -70,14 +81,15 @@ const FulfillOrderModalForm = (props) => {
             }
             return prod;
         });
-        
         setProductList([...tempProductList]);
+        return tempProductList
     }
 
     const handleLotValueChanges = (e, index, property) => {
         let product = scannedProduct;
         let fulfilledQuantity = 0;
         let fulfillingStatus = 'started';
+        let tempProducts = [];
 
         if(property === 'LotNumber'){
             product.LotNumbers[index][property] = e.target.value;
@@ -97,10 +109,17 @@ const FulfillOrderModalForm = (props) => {
         product.error = '';
         fulfilledQuantity = calculateFulfilledQuantity(product);
         product.fulfilledQuantity = fulfilledQuantity;
+        if(fulfilledQuantity > product.Quantity  ){
+            if(index === 0 && product.LotNumbers[index].errorQty !== '' && product.LotNumbers[index].errorLotName !== ''){
+                
+            }
+            product.error = 'Fulfilled Quantity Exceeds Actual Quantity'
+        }
         fulfillingStatus = checkFulfillingStatus(product);
         product.fulfilling = fulfillingStatus;
-        updateProductList(product);
+        tempProducts = updateProductList(product);
         setScannedProduct({...product});
+        calculateTotalOrderFulfilledQuantity(tempProducts);
     }
 
     const calculateFulfilledQuantity = (product) => {
@@ -119,7 +138,6 @@ const FulfillOrderModalForm = (props) => {
     const checkOrderFulfilled = () => {
         let flag = true;
         productList.map(product => {
-            console.log("product", product, parseInt(product.Quantity) === parseInt(product.fulfilledQuantity) && flag)
             if(parseInt(product.Quantity) === parseInt(product.fulfilledQuantity) && flag === true){
                 flag = true;
             }else{
@@ -179,6 +197,7 @@ const FulfillOrderModalForm = (props) => {
             }
             return lot;
         });
+
         let fulfilledQuantity = calculateFulfilledQuantity(tempScanned);
         if(flag){
             if(parseInt(fulfilledQuantity) === parseInt(tempScanned.Quantity)){
@@ -196,14 +215,37 @@ const FulfillOrderModalForm = (props) => {
             tempScanned.LotNumbers = [...tempLot];
             setScannedProduct({...tempScanned});
         }
-        
     }
-    
+
+    const removeLotHandler = (index) => {
+        let tempScanned = {...scannedProduct};
+        if(tempScanned.LotNumbers.length > 1){
+            tempScanned.LotNumbers.splice(index, 1);
+            tempScanned.fulfilledQuantity = calculateFulfilledQuantity(tempScanned);
+            tempScanned.fulfilling = checkFulfillingStatus(tempScanned);
+            setScannedProduct({...tempScanned});
+            updateProductList(tempScanned);
+        }
+        
+    }    
+
+    const undoLotAllotment = (index) => {
+        let tempProductList = [...productList];
+        let tempProd = {...tempProductList[index]};
+        tempProd.LotNumbers = [];
+        tempProd.fulfilledQuantity = 0;
+        tempProd.fulfilling = 'started';
+        tempProductList.splice(index, 1, tempProd);
+        calculateTotalOrderFulfilledQuantity(tempProductList);
+        setProductList([...tempProductList]);
+    }
+
 
     const renderProductLotList = () => {
         return scannedProduct && scannedProduct.LotNumbers && scannedProduct.LotNumbers.map((card, index) => {
             return (
                     <div className={`lotAlotment ${index === (scannedProduct.LotNumbers.length - 1) ? 'lastLot' : 'notLastLot'} `} key={index}>
+                        <RemoveIcon onClick={(e) => removeLotHandler(index)}/>
                         <div className="lot">
                             <label >Lot#</label>
                             <TextField
@@ -242,7 +284,11 @@ const FulfillOrderModalForm = (props) => {
     const renderProductList = () => {
         console.log("productlist", productList)
         return productList.map((product, index) => {
-            return <FulfillmentOrderProductTab key={index} product={product} />
+            return <FulfillmentOrderProductTab 
+                        key={index} 
+                        product={product} 
+                        undoLotNumbers={(e) => undoLotAllotment(index)}
+                    />
         })
     }
 
@@ -272,13 +318,17 @@ const FulfillOrderModalForm = (props) => {
     }
 
     useEffect( () => {
+        let products = formatProductData();
+        calculateTotalOrderFulfilledQuantity(products);
+    }, [props]);
+
+    useEffect( () => {
         let tempLotRender = renderProductLotList();
         setRenderLot(tempLotRender);
         checkOrderFulfilled();
-    }, [scannedProduct])
+    }, [scannedProduct]);
 
     ModalCloseHelper(wrapperRef, modalRef, closeModal); 
-    const [productList, setProductList] = React.useState(formatProductData());
     return (
         <div className="customerModalFormContainer" ref={wrapperRef} style={{display: showModal ? 'block' : 'none'}}>
             <Grid container spacing={3} backdrop="true" ref={modalRef} keyboard="true"  className="customerInfoContainer customerModalForm orderModalForm">
@@ -292,7 +342,7 @@ const FulfillOrderModalForm = (props) => {
                     <p>{`ORDER #${1234566754}`}</p>
                     <div className="verticalLine"></div>
                     <p>{"PURE COLLECTIVES"}</p>
-                    <p>{`${2}/${50}`}</p>
+                    {fulfilledRatio}
                 </Grid>
                 <Grid item xs={12} className="productTabContainer fulfillModalProductContainer">
                     {renderProductList()}
@@ -313,9 +363,12 @@ const FulfillOrderModalForm = (props) => {
                     </div>
                     <Divider  orientation="vertical" />
                     <div className="lotAllotmentContainer">
-                        <p>{scannedProduct.ProductName}</p>
+                        <p>
+                            {scannedProduct.ProductName}
+                            {scannedProduct && scannedProduct.error ? <span>{scannedProduct.error}</span> : ''}
+                        </p>
                         {renderLot}
-                        {scannedProduct && scannedProduct.error ? <p>{scannedProduct.error}</p> : ''}
+                        
                     </div>
                 </Grid>
                 <Grid item xs={12} className="orderModalFooter fulfillmentModalFooter">

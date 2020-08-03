@@ -1,7 +1,10 @@
 .fulfillModalCustomerInfo.orderModalCustomerInfo p:last-of-type{
-    font-size: 18px;
-    font-weight: 700;
-    margin-right: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+.fulfillModalCustomerInfo.orderModalCustomerInfo p.error:last-of-type{
+    color: #ff0000f2;
 }
 .fulfillModalCustomerInfo.orderModalCustomerInfo{
     padding-top: 8px;
@@ -21,25 +24,54 @@
     margin: 0px 13px 10px;
     border-radius: 5px;
 }
+.fulfillmentProductTab.productTab{
+    padding: 0px 0px 0px 10px;
+    min-height: 60px;
+}
 .fulfillmentProductTab.productTab > div{
     align-self: flex-start;
+    height: 100%;
 }
 .fulfillmentProductTab.productTab .productDetails.productName{
-    width: 40%;
+    width: 35%;
 }
 .fulfillmentProductTab.productTab .productDetails {
-    width: 12%;
+    width: 10%;
 }
-.fulfillmentProductTab.productTab .productDetails:last-child{
-    width: 30%;
+.fulfillmentProductTab.productTab .productDetails.lotSection{
+    width: 25%;
+    word-break: break-word;
 }
 .fulfillmentProductTab .productDetails{
-    padding: 0px 3px;
+    padding: 2px 3px;
 }
 .fulfillmentProductTab .productDetails span{
     font-size: 13px;
     font-weight: 600;
     color: #4848489c;
+}
+.fulfillmentProductTab .productDetails.undoAction{
+    width: 50px;
+    height:auto ;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    opacity: 6.;
+    background: #0000001c;
+}
+.fulfillmentProductTab .productDetails.undoAction svg.MuiSvgIcon-root{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #1B5865;
+    margin-top: auto;
+    transition: 50%;
+}
+.fulfillmentProductTab .productDetails.undoAction p{
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+    color: #1B5865;
 }
 .fulfillInprogress{
     background: #FFE9EC;
@@ -104,13 +136,16 @@
     border-right: 1px solid #288497;
     margin: 0px 5px;
 }
+.lot p.MuiFormHelperText-contained{
+    margin: auto;
+}
 
 .lotAllotmentContainer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: calc(100% - 23%);
-    height: 125px;
+    min-height: 130px;
 }
 .lotAllotmentContainer .lotAlotment{
     justify-content: space-around;
@@ -124,32 +159,41 @@
     width: 21%;
     margin-right: 5px;
 }
+.lotAllotmentContainer .lotAlotment svg.MuiSvgIcon-root:first-child{
+    font-size: 12px;
+    padding: 0px;
+    border-radius: 50%;
+    border-style: solid;
+    color: #ff0000b8;
+    border-color: #ff0000b8;
+}
 .lotAllotmentContainer .lotAlotment.notLastLot .lot{
-    width: 50%;
+    width: 48%;
 }
 .lotAllotmentContainer .lotAlotment.notLastLot .lot:last-child{
-    width: 45%;
+    width: 40%;
 }
 .lotAllotmentContainer > p{
     width: 100%;
-    margin: 0px 0px 0px 4px;
+    margin: 0px 0px 0px 0px;
 }
-.lotAllotmentContainer > p:first-child{
+.lotAllotmentContainer > p:first-child{     
     font-size: 17px;
     font-weight: 600;
     color: #0D2C32;
+    margin-bottom: 3px;
 }
-.lotAllotmentContainer > p:last-child{
+.lotAllotmentContainer > p span{
     font-size: 12px;
     font-weight: 500;
     color: #ff0000de;
-    margin-top: -24px;
-    margin-left: 4px;
+    margin: 0px 0px 0px 4px;
+    margin-left: 30px;
 }
 .lotAllotmentContainer .lotAlotment .lot{
     display: flex;
     flex-wrap: wrap;
-    width: 40%;
+    width: 39%;
     padding: 5px 0px;
 }
 .lotAllotmentContainer .lotAlotment .lot:last-child{

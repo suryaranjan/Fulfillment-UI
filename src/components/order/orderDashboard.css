@@ -7,12 +7,17 @@
     transition: none;
     border-bottom: none;
 }
-
+.MuiGrid-spacing-xs-3 > .orderListDropdown.MuiGrid-item ,.orderDropdown.MuiGrid-item {
+    padding-bottom: 0px;
+}
+.MuiGrid-spacing-xs-3 > .customerDropdown.MuiGrid-item {
+    padding-bottom: 0px;
+}
 .orderListDropdown{
     display: flex;
 }
 .orderListDropdown .MuiInputBase-root.MuiInput-root.MuiInput-underline{
-    margin-top: 1px;
+    margin-top: 4px;
     margin-left: 5px;
     z-index: 1;
 }
@@ -184,12 +189,7 @@
 }
 
 /* Order Table */
-.orderHistoryTable  tr th{
-    width: 9%;
-}
-.orderHistoryTable  tr th.price{
-    width: 6%;
-}
+
 .orderHistoryTable  tr th.action{
     width: 7%;
 }
@@ -218,7 +218,25 @@
     border: 1px solid #1B5865;
     border-radius: 6px;
     box-shadow: 0px 0px 0px 1px #1b58653b;
+    height: 64vh;
 }
+.orderHistoryTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.orderHistoryTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar
+{
+	width: 2px;
+    background-color: #F5F5F5;
+    height: 3px;
+}
+
+.orderHistoryTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded::-webkit-scrollbar-thumb
+{
+	background-color: #97CBD5;
+}
+
 .orderHistoryTable .fulfillmentTableAction svg.MuiSvgIcon-root{
     font-size: 18px;
     color: #97CBD5;
@@ -228,4 +246,30 @@
 .orderHistoryTable .fulfillmentTableAction span{
     font-size: 11px;
     color: #97CBD5;
+}
+
+/* Order Complete Modal */
+.orderCompleteModal.customerModalForm.customerInfoContainer{
+    height: 80vh;
+    width: 75% !important;
+    top: 5%;
+}
+.orderCompleteModal.customerModalForm.customerInfoContainer .orderPlacedContainer {
+    display: flex;
+}
+.orderCompleteModal.customerModalForm.customerInfoContainer .orderPlacedContainer  div{
+    margin: auto;
+}
+.orderCompleteModal.customerModalForm.customerInfoContainer .orderPlacedContainer  div svg{
+    font-size: 50px;
+    color: #ffffff;
+    background: #2E96AB;
+    border-radius: 50%;
+    padding: 25px;
+}
+.orderCompleteModal.customerModalForm.customerInfoContainer .orderPlacedContainer  div p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #0D2C32;
 }

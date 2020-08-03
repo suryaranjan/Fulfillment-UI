@@ -58,7 +58,7 @@ nav.hamburgerMenu a span svg{
 
 .sideNavTab{
   position: absolute;
-  top: 20%;
+  top: 15%;
   width: 100%;
 }
 .sideNavTab span.PrivateTabIndicator-colorSecondary-83{
@@ -67,7 +67,7 @@ nav.hamburgerMenu a span svg{
 .hamburgerMenuShortcut.hamburgerMenu{
     width: 74px;
     position: unset;
-    height: 85.76vh;
+    height: 92vh;
 }
 .hideNavbar.hamburgerMenuShortcut.hamburgerMenu{
   display: none;

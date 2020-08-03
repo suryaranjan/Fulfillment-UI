@@ -29,6 +29,11 @@ const OrderHistoryTable = (props) => {
     setPage(0);
   };
 
+  const convertDateToReadable = (date) => {
+      let d = new Date(date);
+      return d.toDateString();
+  }
+
     return (
         <TableContainer component={Paper}>
             <Table className="orderHistoryTable" >
@@ -57,12 +62,12 @@ const OrderHistoryTable = (props) => {
                             <TableCell component="th" scope="row">
                                 {row.OrderId}
                             </TableCell>
-                            <TableCell align="left">{row.OrderDate}</TableCell>
+                            <TableCell align="left">{convertDateToReadable(row.OrderDate)}</TableCell>
                             <TableCell align="left">{row.UserName}</TableCell>
                             <TableCell align="left">{row.UserName}</TableCell>
                             <TableCell align="left">{`12234556665433`}</TableCell>
                             <TableCell align="left">{row.ShippingMethod}</TableCell>
-                            <TableCell align="left">{row.ShippingDate}</TableCell>
+                            <TableCell align="left">{convertDateToReadable(row.ShippingDate)}</TableCell>
                             <TableCell align="left">{`Credit Card`}</TableCell>
                             <TableCell align="left">{row.LastFourDigits}</TableCell>
                             <TableCell align="left">{`$${row.TotalPlatformFee}`}</TableCell>

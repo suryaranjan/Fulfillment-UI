@@ -1,4 +1,7 @@
 /* Product Dashboard */
+.orderHistoryTableContainer.productTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded{
+    height: 61vh;
+}
 .productFilters .product-name{
     width: 20%;
 }
@@ -61,7 +64,7 @@
     margin-left: 0px;
 }
 .productColumnListCheckbox{
-    height: 60vh;
+    height: 56vh;
     overflow-y: scroll;
 }
 .productColumnListCheckbox::-webkit-scrollbar-track

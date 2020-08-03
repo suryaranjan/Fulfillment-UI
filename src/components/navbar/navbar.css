@@ -171,7 +171,7 @@ header{
 }
 #menu-.MuiPopover-root .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
     top: 58px !important;
-    left: 121px !important;
+    left: 134px !important;
     width: 17.8%;
 
 }
@@ -187,7 +187,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-padding{
     #menu-.MuiPopover-root .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
         
         width: 18.8%;
-        left: 64px !important;
     
     }
     .partnerMenuItem.selectedItem {
@@ -200,7 +199,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-padding{
     #menu-.MuiPopover-root .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
         
         width: 19.8%;
-        left: 64px !important;
     
     }
     .partnerMenuItem.selectedItem {
@@ -213,7 +211,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-padding{
     #menu-.MuiPopover-root .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
         
         width: 22.8%;
-        left: 64px !important;
     
     }
     .partnerMenuItem.selectedItem {
@@ -226,7 +223,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-padding{
     #menu-.MuiPopover-root .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
         
         width: 25.8%;
-        left: 64px !important;
     
     }
     .partnerMenuItem.selectedItem {
