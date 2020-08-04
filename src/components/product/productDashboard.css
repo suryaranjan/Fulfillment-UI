@@ -1,6 +1,21 @@
 /* Product Dashboard */
+td.MuiTablePagination-root{
+    display: flex;
+}
+td.MuiTablePagination-root .MuiTablePagination-toolbar{
+    margin-left: auto;
+}
+.MuiCheckbox-colorSecondary.Mui-checked:hover {
+    background-color: unset;
+}
+.MuiIconButton-root:hover {
+    background-color: unset;
+}
+.MuiIconButton-colorSecondary:hover {
+    background-color: unset;
+}
 .orderHistoryTableContainer.productTableContainer .MuiPaper-root.MuiTableContainer-root.MuiPaper-elevation1.MuiPaper-rounded{
-    height: 61vh;
+    height: 57vh;
 }
 .productFilters .product-name{
     width: 20%;

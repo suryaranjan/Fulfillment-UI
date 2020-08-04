@@ -8,8 +8,8 @@ const CustomerAddressCard = (props) => {
     const addressData = props.address;
     
     return (
-        <Paper elevation={3} className="customerAddressCardContainer">
-             <Grid container spacing={3} className="customerAddressCard">
+        <Paper elevation={3} className={`customerAddressCardContainer ${props.addressSelected ? 'selected' : ''}`}>
+             <Grid container spacing={3} className="customerAddressCard" onClick={props.addressChange}>
                 <Grid item xs={2} className="customerAddressTypeLogo">
                     <HomeIcon/>
                 </Grid>

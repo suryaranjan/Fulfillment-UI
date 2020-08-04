@@ -6,12 +6,22 @@ const CustomerCreditCard = (props) => {
     const [editPayment, setEditPayment] = React.useState(false);
 
     const handleEditPayment = () => {
-        setEditPayment(true);
+        setEditPayment(!editPayment);
     }
 
     return (
         <>
-            { !editPayment ? <CustomerCreditCardListView editPayment={handleEditPayment}/> : <CustomerCreditCardForm/> }
+            { !editPayment ? 
+            <CustomerCreditCardListView 
+                editPayment={handleEditPayment}
+                createOrder={props.createOrder ? props.createOrder : false}
+                creditCardChange={props.creditCardChange}
+                creditCardSelected={props.creditCardSelected}
+                closeModal={props.closeModal}
+            /> 
+            : <CustomerCreditCardForm
+                cancelEditAddress={handleEditPayment}
+            /> }
         </>
     )
 }

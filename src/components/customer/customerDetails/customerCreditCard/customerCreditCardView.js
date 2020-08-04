@@ -9,8 +9,8 @@ const CustomerCreditCardView = (props) => {
     const card = props.card;
 
     return(
-        <Paper elevation={3} className="customerAddressCardContainer">
-             <Grid container spacing={3} className="customerAddressCard customerCreditCard">
+        <Paper elevation={3} className={`customerAddressCardContainer ${props.creditCardSelected ? 'selected' : ''}`}>
+             <Grid container spacing={3} className="customerAddressCard customerCreditCard" onClick={props.creditCardChange}>
                 <Grid item xs={6} className="customerCreditCardHeader">
                     {card.name}
                 </Grid>

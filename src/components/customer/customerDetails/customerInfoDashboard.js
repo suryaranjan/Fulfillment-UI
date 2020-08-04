@@ -35,7 +35,7 @@ class CustomerInfoDashboard extends React.Component{
         this.state = {
             tabSelected: 0,
             orderAlertView: false,
-            orderModalView: false,
+            orderModalView: true,
             orderDetailsModalView: false,
             showOrderPlaced: false
         }
@@ -118,7 +118,7 @@ class CustomerInfoDashboard extends React.Component{
                     </Grid> 
                     <Grid item xs={3} className="customerButtonNavigation">
                         
-                        <Button variant="outlined" >
+                        <Button variant="outlined" onClick={this.handleOrderModal}>
                             Create New Order
                         </Button>
                     </Grid>

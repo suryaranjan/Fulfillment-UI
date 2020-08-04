@@ -14,36 +14,42 @@ import { IconButton } from '@material-ui/core';
 import FulfillOrderModalForm from '../fulfillment/fulfillOrder/fulfillOrderModalForm';
 import { orderFilters, orderTypeDropdown } from '../../constants/dropdownConstant';
 import OrderHistoryTable from './orderList';
+import CreateOrderModalForm from '../order/createOrder/createOrderModalForm';
+import OrderCompleteModal from '../order/createOrder/orderCompleteModal';
+import OrderDetailsModalView from '../order/orderDetails/orderDetailsView';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import * as Service from '../../tempService/tempService';
 
-class OrderDashboard extends React.Component{
+class OrderDashboard extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             orderAdvanceFilter: false,
             fulfillModalShow: false,
             orderListData: [],
-            fulfillingOrder: {}
+            fulfillingOrder: {},
+            orderListFilterSelected: 1,
+            createOrderModalView: false,
+            orderDetailsModalView: false
         }
     }
 
-    componentDidMount (){
+    componentDidMount() {
         Service.getAllOrders().then((data) => {
             this.setState({
                 orderListData: data.data.Response
             })
         })
-            
+
     }
 
     handleFulfillModalShow = (orderId) => {
-        if(orderId){
+        if (orderId) {
             Service.getOrderItems(orderId).then(data => {
                 this.setState({
                     fulfillingOrder: {
-                        orderId : orderId,
+                        orderId: orderId,
                         products: data.data.Response
                     }
                 });
@@ -54,15 +60,34 @@ class OrderDashboard extends React.Component{
         })
     }
 
+    handleOrderListFilterChange = (e) => {
+        this.setState({
+            orderListFilterSelected: e.target.value
+        })
+    }
+
     handleAdvanceFilter = () => {
         this.setState({
             orderAdvanceFilter: !this.state.orderAdvanceFilter
         })
     }
+
+    handleCreateOrderModalView = () => {
+        this.setState({
+            createOrderModalView: !this.state.createOrderModalView
+        })
+    }
+
+    handleOrderDetailsModalView = () => {
+        this.setState({
+            orderDetailsModalView: !this.state.orderDetailsModalView
+        })
+    }
+
     orderFiltersTextField = () => {
-        return orderFilters.map( filter => {
-            if(filter.id === 'order-id-type'){
-                return(
+        return orderFilters.map(filter => {
+            if (filter.id === 'order-id-type') {
+                return (
                     <Autocomplete
                         key={filter.id}
                         className="orderFiltersAutoComplete"
@@ -71,21 +96,21 @@ class OrderDashboard extends React.Component{
                         clearOnBlur={false}
                         options={orderTypeDropdown.map((option) => option.title)}
                         renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            label="Order Type"
-                            margin="normal"
-                            placeholder="Order Type"
-                            variant="outlined"
-                            InputProps={{ ...params.InputProps, type: 'search' }}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                        />
+                            <TextField
+                                {...params}
+                                label="Order Type"
+                                margin="normal"
+                                placeholder="Order Type"
+                                variant="outlined"
+                                InputProps={{ ...params.InputProps, type: 'search' }}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                            />
                         )}
                     />
-                ) 
-                        
+                )
+
             }
             return (
                 <TextField
@@ -96,62 +121,105 @@ class OrderDashboard extends React.Component{
                     variant="outlined"
                     InputLabelProps={{
                         shrink: true,
-                      }}
+                    }}
                     placeholder={filter.subName}
                 />
             )
         });
     }
 
-    render(){
-
-        return(
+    render() {
+        return (
             <>
-                {this.state.fulfillingOrder.products ? <FulfillOrderModalForm modalView={this.state.fulfillModalShow} order={this.state.fulfillingOrder} modalClose={this.handleFulfillModalShow}/> : ''}
+                {this.state.createOrderModalView ?
+                    <CreateOrderModalForm 
+                        modalView={this.state.createOrderModalView} 
+                        modalClose={this.handleCreateOrderModalView} 
+                        placeOrder={this.handleOrderPlacedModalView}/> : ''
+                }
+                {this.state.showOrderPlaced ?
+                    <OrderCompleteModal completeText={"Order Placed"} 
+                        modalView={this.state.showOrderPlaced}
+                        modalClose={this.handleOrderPlacedModalView}/> : ''
+                }
+                {this.state.orderDetailsModalView ?
+                    <OrderDetailsModalView 
+                        modalView={this.state.orderDetailsModalView}
+                        modalClose={this.handleOrderDetailsModalView}/> : ''
+                }
+                {this.state.fulfillingOrder.products ? 
+                    <FulfillOrderModalForm 
+                        modalView={this.state.fulfillModalShow} 
+                        order={this.state.fulfillingOrder} 
+                        modalClose={this.handleFulfillModalShow} /> : ''
+                }
                 <Grid container spacing={3}>
-                    <Grid item xs={10} className="orderListDropdown">
-                        <h3>Showing All :</h3>
-                        <Select  
-                            defaultValue="" 
-                            variant='standard' 
-                            id="order-status"
-                            IconComponent={ExpandMoreIcon}
-                            native
-                        >
-                            <option value={1}>Pending Orders</option>
-                            <option value={2}>Fulfilled Orders</option>
-                            <option value={3}>Problem Orders</option>
-                            <option value={4}>Processing Orders</option>
-                        </Select>
+                    <Grid item xs={10} className="orderDashboard">
+                        <h2>Dashboard</h2>
+                        <div className="orderListDropdown">
+                            <h3>Showing All :</h3>
+                            <Select
+                                defaultValue=""
+                                variant='standard'
+                                id="order-status"
+                                IconComponent={ExpandMoreIcon}
+                                native
+                                onChange={this.handleOrderListFilterChange}
+                            >
+                                <option value={1}>Pending Orders</option>
+                                <option value={2}>Fulfilled Orders</option>
+                                <option value={3}>Problem Orders</option>
+                                <option value={4}>Processing Orders</option>
+                            </Select>
+                        </div>
+                        {parseInt(this.state.orderListFilterSelected) === 3 ?
+                            <div className="orderListDropdown">
+                                <h3>Showing All :</h3>
+                                <Select
+                                    defaultValue=""
+                                    variant='standard'
+                                    id="order-status"
+                                    IconComponent={ExpandMoreIcon}
+                                    native
+                                >
+                                    <option value={1}>Payment Issues</option>
+                                    <option value={2}>Fulfilled Issues</option>
+                                </Select>
+                            </div> : ''
+                        }
                     </Grid>
                     <Grid item xs={2} className="orderDropdown customerDropdown">
-                        <Button variant="outlined">
+                        <Button variant="outlined" onClick={this.handleCreateOrderModalView}>
                             Create New Order
                         </Button>
                     </Grid>
                     <Grid item xs={12} className="orderFilters">
-                        { this.state.orderAdvanceFilter ? 
+                        {this.state.orderAdvanceFilter ?
                             <div className="orderAdvanceFilters">
                                 {this.orderFiltersTextField()}
-                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter}/>
+                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter} />
                             </div>
                             :
                             <div className="orderFilterSearch">
-                                <IconButton  aria-label="menu" className="searchIcon">
+                                <IconButton aria-label="menu" className="searchIcon">
                                     <SearchIcon />
                                 </IconButton>
                                 <InputBase className="searchBar"
                                     placeholder="Search Order"
                                 />
-                                <Divider  orientation="vertical" />
-                                <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
-                                    <FilterListIcon  />
-                                </IconButton> 
+                                <Divider orientation="vertical" />
+                                <IconButton aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
+                                    <FilterListIcon />
+                                </IconButton>
                             </div>
                         }
                     </Grid>
                     <Grid item xs={12} className="orderHistoryTableContainer">
-                        <OrderHistoryTable orderList={this.state.orderListData} fulfillOrder={this.handleFulfillModalShow}/>
+                        <OrderHistoryTable 
+                            orderList={this.state.orderListData} 
+                            fulfillOrder={this.handleFulfillModalShow} 
+                            showOrderDetails={this.handleOrderDetailsModalView}
+                        />
                     </Grid>
                 </Grid>
             </>

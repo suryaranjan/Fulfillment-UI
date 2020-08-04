@@ -16,9 +16,9 @@ import { customerFilters } from '../../constants/dropdownConstant';
 import './customerDashboard.css';
 
 
-class CustomerDashboard extends React.Component{
+class CustomerDashboard extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             customerAdvanceFilter: false,
@@ -35,8 +35,8 @@ class CustomerDashboard extends React.Component{
             customerModalFormView: !this.state.customerModalFormView
         });
     }
-    customerFiltersTextField = () => {  
-        return customerFilters.map( filter => {
+    customerFiltersTextField = () => {
+        return customerFilters.map(filter => {
             return (
                 <TextField
                     key={filter.name}
@@ -47,31 +47,34 @@ class CustomerDashboard extends React.Component{
                     variant="outlined"
                     InputLabelProps={{
                         shrink: true,
-                      }}
+                    }}
                     placeholder={filter.subName}
                 />
             )
         });
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <>
-                <CustomerModalForm modalView={this.state.customerModalFormView} modalClose={this.handleCustomerModalForm}/>
+                <CustomerModalForm modalView={this.state.customerModalFormView} modalClose={this.handleCustomerModalForm} />
                 <Grid container spacing={3}>
-                    <Grid item xs={10} className="orderListDropdown">
-                        <h3>Showing All :</h3>
-                        <Select 
-                            autoWidth={true} 
-                            defaultValue="" 
-                            variant='standard' 
-                            id="customer-status"
-                            IconComponent={ExpandMoreIcon}
-                            native={true}
-                        >
-                            <option value={1}>Active Customers</option>
-                            <option value={2}>Inactive Customer</option>
-                        </Select>
+                    <Grid item xs={10} className="orderDashboard">
+                        <h2>Customers</h2>
+                        <div className="orderListDropdown">
+                            <h3>Showing All :</h3>
+                            <Select
+                                autoWidth={true}
+                                defaultValue=""
+                                variant='standard'
+                                id="customer-status"
+                                IconComponent={ExpandMoreIcon}
+                                native={true}
+                            >
+                                <option value={1}>Active Customers</option>
+                                <option value={2}>Inactive Customer</option>
+                            </Select>
+                        </div>
                     </Grid>
                     <Grid item xs={2} className="customerDropdown">
                         <Button variant="outlined" onClick={this.handleCustomerModalForm}>
@@ -79,28 +82,28 @@ class CustomerDashboard extends React.Component{
                         </Button>
                     </Grid>
                     <Grid item xs={12} className="orderFilters customerFilters">
-                        { this.state.customerAdvanceFilter ? 
+                        {this.state.customerAdvanceFilter ?
                             <div className="orderAdvanceFilters">
                                 {this.customerFiltersTextField()}
-                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter}/>
+                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter} />
                             </div>
                             :
                             <div className="orderFilterSearch">
-                                <IconButton  aria-label="menu" className="searchIcon">
+                                <IconButton aria-label="menu" className="searchIcon">
                                     <SearchIcon />
                                 </IconButton>
                                 <InputBase className="searchBar"
                                     placeholder="Search Customer"
                                 />
-                                <Divider  orientation="vertical" />
-                                <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
-                                    <FilterListIcon  />
-                                </IconButton> 
+                                <Divider orientation="vertical" />
+                                <IconButton aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
+                                    <FilterListIcon />
+                                </IconButton>
                             </div>
                         }
                     </Grid>
                     <Grid item xs={12} className="customerTableContainer">
-                        <CustomerList/>
+                        <CustomerList />
                     </Grid>
                 </Grid>
             </>

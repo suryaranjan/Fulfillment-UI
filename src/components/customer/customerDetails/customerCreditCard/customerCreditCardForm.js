@@ -124,7 +124,7 @@ class  CustomerCreditCardForm extends React.Component{
                 </Grid>
                 <Grid item xs={12} className="customerAddressFormButton customerCrediCardFormButton">
                     <Grid item xs={6}  className="customerAddressFormBox cancelButton">
-                        <Button variant="outlined" >
+                        <Button variant="outlined" onClick={this.props.cancelEditAddress}>
                             Cancel
                         </Button>
                     </Grid>

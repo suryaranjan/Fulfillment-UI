@@ -50,6 +50,7 @@
 .orderModalCustomerInfo svg.MuiSvgIcon-root{
     font-size: 20px;
     color: #2E96AB;
+    cursor: pointer;
 }
 .orderModalTabActionContainer{
     display: flex;
@@ -58,12 +59,14 @@
 .orderModalTabAction .bottomSecAction p {
     margin: 0px;
     margin-top: 5px;
+    font-size: 15px;
     color: #005971;
     font-weight: 600;
     text-decoration: underline;
+    cursor: pointer;
 }
 .orderModalTabAction .bottomSec {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #484848;
     letter-spacing: 1px;
@@ -72,15 +75,19 @@
 .orderModalTabAction .supHeader p:last-child {
     text-decoration: underline;
     color: #005971;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-}
-.orderModalTabAction .supHeader p {
     margin: 0px;
-    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.orderModalTabAction .supHeader p:first-child {
+    margin: 0px;
+    font-size: 13px;
     font-weight: 500;
     color: #767676;
     letter-spacing: 1px;
+    text-decoration: none;
 }
 .orderModalTabAction.lastTag{
     max-width: unset; 
@@ -238,6 +245,7 @@
     display: flex;
     background: #EBF8FA;
     border-top: 1px solid #36B0C9;
+    border-radius: 0px 0px 5px 5px;
 }
 .orderModalFooter .footerActionItem{
     margin-right: 25px;

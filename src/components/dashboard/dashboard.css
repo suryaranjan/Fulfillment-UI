@@ -1,6 +1,5 @@
 .dashboardContainer.MuiContainer-root{
     min-height: 83vh;
-    margin-top: 10px;
     height: 86vh;
     overflow: auto;
 }   

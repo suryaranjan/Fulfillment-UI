@@ -170,6 +170,7 @@
 .customerInfoEditIcon .MuiSvgIcon-root{
     fill: #68C4D6;
     float: right;
+    cursor: pointer;
 }
 .customerInfoDetails{
     width: 100%;

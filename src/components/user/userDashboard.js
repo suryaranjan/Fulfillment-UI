@@ -16,8 +16,8 @@ import UserModalForm from './createUser/userModalForm';
 import { userFilter, userRoleDropdown } from '../../constants/dropdownConstant';
 import './user.css';
 
-class UserDashboard extends React.Component{
-    constructor(props){
+class UserDashboard extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             userAdvanceFilter: false,
@@ -36,8 +36,8 @@ class UserDashboard extends React.Component{
         });
     }
     userFilterTextField = () => {
-        return userFilter.map( filter => {
-            if(filter.id === "user-roles"){
+        return userFilter.map(filter => {
+            if (filter.id === "user-roles") {
                 return (
                     <Autocomplete
                         key={filter.id}
@@ -47,17 +47,17 @@ class UserDashboard extends React.Component{
                         clearOnBlur={false}
                         options={userRoleDropdown.map((option) => option.title)}
                         renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            label="User Type"
-                            margin="normal"
-                            placeholder="User Type"
-                            variant="outlined"
-                            InputProps={{ ...params.InputProps, type: 'search' }}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                        />
+                            <TextField
+                                {...params}
+                                label="User Type"
+                                margin="normal"
+                                placeholder="User Type"
+                                variant="outlined"
+                                InputProps={{ ...params.InputProps, type: 'search' }}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                            />
                         )}
                     />
                 )
@@ -71,30 +71,33 @@ class UserDashboard extends React.Component{
                     variant="outlined"
                     InputLabelProps={{
                         shrink: true,
-                      }}
+                    }}
                     placeholder={filter.subName}
                 />
             )
         })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <>
-                <UserModalForm modalView={this.state.userModalFormView} modalClose={this.handleUserModalForm}/>
-                 <Grid container spacing={3}>
-                    <Grid item xs={10} className="orderListDropdown">
-                        <h3>Showing All :</h3>
-                        <Select  
-                            defaultValue="" 
-                            variant='standard' 
-                            id="order-status"
-                            IconComponent={ExpandMoreIcon}
-                            native
-                        >
-                            <option value={1}>Active Users</option>
-                            <option value={2}>Inactive Users</option>
-                        </Select>
+                <UserModalForm modalView={this.state.userModalFormView} modalClose={this.handleUserModalForm} />
+                <Grid container spacing={3}>
+                    <Grid item xs={10} className="orderDashboard">
+                        <h2>Users</h2>
+                        <div className="orderListDropdown">
+                            <h3>Showing All :</h3>
+                            <Select
+                                defaultValue=""
+                                variant='standard'
+                                id="order-status"
+                                IconComponent={ExpandMoreIcon}
+                                native
+                            >
+                                <option value={1}>Active Users</option>
+                                <option value={2}>Inactive Users</option>
+                            </Select>
+                        </div>
                     </Grid>
                     <Grid item xs={2} className="orderDropdown customerDropdown">
                         <Button variant="outlined" onClick={this.handleUserModalForm}>
@@ -102,28 +105,28 @@ class UserDashboard extends React.Component{
                         </Button>
                     </Grid>
                     <Grid item xs={12} className="orderFilters">
-                        { this.state.userAdvanceFilter ? 
+                        {this.state.userAdvanceFilter ?
                             <div className="orderAdvanceFilters userAdvanceFilter">
                                 {this.userFilterTextField()}
-                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter}/>
+                                <CancelIcon className="cancelIcon" onClick={this.handleAdvanceFilter} />
                             </div>
                             :
                             <div className="orderFilterSearch">
-                                <IconButton  aria-label="menu" className="searchIcon">
+                                <IconButton aria-label="menu" className="searchIcon">
                                     <SearchIcon />
                                 </IconButton>
                                 <InputBase className="searchBar"
                                     placeholder="Search User"
                                 />
-                                <Divider  orientation="vertical" />
-                                <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
-                                    <FilterListIcon  />
-                                </IconButton> 
+                                <Divider orientation="vertical" />
+                                <IconButton aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
+                                    <FilterListIcon />
+                                </IconButton>
                             </div>
                         }
                     </Grid>
                     <Grid item xs={12} className="orderHistoryTableContainer">
-                        <UserList/>
+                        <UserList />
                     </Grid>
                 </Grid>
             </>

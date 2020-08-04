@@ -7,9 +7,7 @@ const OrderCompleteModal = (props) => {
     const wrapperRef = useRef(null);
     const modalRef = useRef(null);
     const showModal = props.modalView;
-    console.log("props",props)
     const closeModal = () => {
-        console.log("order complete")
         if(showModal){
             props.modalClose();
         }

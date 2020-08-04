@@ -2,6 +2,9 @@
 export const ORDER_DASHBOARD = "/orderDashboard";
 export const CREATE_ORDER = '/createOrder';
 
+//Fulfillment
+export const FULFILLMENT_DASHBOARD = "/fulfillmentDashboard";
+
 // Customer
 export const CUSTOMER_DASHBOARD = "/customerDashboard";
 export const CUSTOMER_DETAILS = '/customerDetails';

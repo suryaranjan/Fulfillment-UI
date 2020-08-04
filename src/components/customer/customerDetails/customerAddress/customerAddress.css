@@ -10,6 +10,10 @@
     border-radius: 5px;
     margin: 14px;
 }
+.customerAddressCardContainer.selected{
+    border: 1px solid #1B5865;
+    background: #def1f6;
+}
 .customerAddressCardContainer.MuiPaper-rounded{
     border-radius: 10px;
 }
@@ -36,6 +40,7 @@
     color: #68C4D6;
     margin-top: 10px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 /* customer Address List */
@@ -66,9 +71,16 @@
 }
 
 /* Customer address add button */
+.customerAddressAdd{
+    display: flex;
+}
+.customerAddressAdd svg.MuiSvgIcon-root{
+    font-size: 20px;
+    color: #288497;
+}
 .customerAddressAdd button{
-    float: right;
-    margin-right: 2px;
+    margin-left: auto;
+    margin-right: 10px;
     border: 1px solid;
     color: #1B5865;
     border-color: #1B5865;
@@ -138,7 +150,7 @@
     flex-basis: calc(100% - 5px);
     margin: auto;
     position: relative;
-    bottom: -21px;
+    bottom: -20px;
     border-radius: 0px 0px 5px 5px;
     border-top: 1px solid #288497;
     padding: 8px 12px !important;

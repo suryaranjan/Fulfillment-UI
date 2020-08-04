@@ -18,6 +18,7 @@
 .fulfillModalCustomerInfo.orderModalCustomerInfo svg.MuiSvgIcon-root{
     align-self: center;
     margin-left: auto;
+    cursor: pointer;
 }
 .fulfillModalProductContainer.MuiGrid-spacing-xs-3 > .MuiGrid-item.productTabContainer{
     border: 1px solid #1B5865;

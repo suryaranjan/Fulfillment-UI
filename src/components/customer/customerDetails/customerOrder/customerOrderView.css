@@ -18,6 +18,7 @@
     width: 100%;
     margin: auto;
     margin: 8px auto;
+    cursor: pointer;
     box-shadow: 0px -1px 0px -1px #36B0C9, 0px 1px 3px 0px #36B0C9, 0px 0px 1px 0px #36B0C9;
 }
 .customerOrderFirstDetails{

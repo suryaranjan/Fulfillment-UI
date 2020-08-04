@@ -29,6 +29,7 @@ class CustomerAddressForm extends React.Component{
         return (
             <Grid container spacing={3} className="customerInfoContainer">
                 <Grid item xs={9} className="customerInfoHeader">
+                    
                     <h4>Edit Address</h4>
                 </Grid>
                 <Grid item xs={3} className="customerInfoHeader customerAddressFormEdit">
@@ -169,7 +170,7 @@ class CustomerAddressForm extends React.Component{
                 </Grid>
                 <Grid item xs={12} className="customerAddressFormButton">
                     <Grid item xs={6}  className="customerAddressFormBox cancelButton">
-                        <Button variant="outlined" >
+                        <Button variant="outlined" onClick={this.props.cancelEditAddress} >
                             Cancel
                         </Button>
                     </Grid>

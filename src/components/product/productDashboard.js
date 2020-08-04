@@ -20,9 +20,9 @@ import { productFilter, productColumn } from '../../constants/dropdownConstant';
 import ProductModalForm from './createProduct/createProductModalForm';
 import './productDashboard.css';
 
-class ProductDashboard extends React.Component{
+class ProductDashboard extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             advanceProductFilter: false,
@@ -55,8 +55,8 @@ class ProductDashboard extends React.Component{
     }
     handleChangeProductListColumn = (object) => {
         let productColumnList = this.state.productColumnList;
-        let newProductColumns = productColumnList.map( column => {
-            if(column.name === object.name){
+        let newProductColumns = productColumnList.map(column => {
+            if (column.name === object.name) {
                 column.show = !object.show
             }
             return column;
@@ -66,12 +66,12 @@ class ProductDashboard extends React.Component{
         })
     }
     handleProductColumnFilter = () => {
-        return this.state.productColumnList.map( column => {
+        return this.state.productColumnList.map(column => {
 
             return (
                 <div className="productColumnItem" key={column.id}>
-                    <Checkbox checked={column.show} onChange={(e) => this.handleChangeProductListColumn(column)} 
-                        icon={<CheckBoxOutlineBlankIcon />} checkedIcon={<CheckBoxIcon/>} 
+                    <Checkbox checked={column.show} onChange={(e) => this.handleChangeProductListColumn(column)}
+                        icon={<CheckBoxOutlineBlankIcon />} checkedIcon={<CheckBoxIcon />}
                         label={column.name} name="checkedH" />
                     <p>{column.name}</p>
                 </div>
@@ -80,7 +80,7 @@ class ProductDashboard extends React.Component{
     }
 
     productFilterTextField = () => {
-        return productFilter.map( filter => {
+        return productFilter.map(filter => {
             return (
                 <TextField
                     key={filter.name}
@@ -90,7 +90,7 @@ class ProductDashboard extends React.Component{
                     variant="outlined"
                     InputLabelProps={{
                         shrink: true,
-                      }}
+                    }}
                     placeholder={filter.subName}
                 />
             )
@@ -100,7 +100,7 @@ class ProductDashboard extends React.Component{
         this.eleRef = node;
     }
     handleClose = (e) => {
-        
+
         if (this.eleRef && !this.eleRef.contains(e.target)) {
             this.setState({
                 productColumnListView: !this.state.productColumnListView,
@@ -109,24 +109,27 @@ class ProductDashboard extends React.Component{
         }
     }
 
-    render(){
-        
-        return(
+    render() {
+
+        return (
             <>
                 <ProductModalForm modalView={this.state.productModalForm} modalClose={this.handleModalShow} />
-                 <Grid container spacing={3}>
-                    <Grid item xs={10} className="orderListDropdown">
-                        <h3>Showing All :</h3>
-                        <Select  
-                            defaultValue="" 
-                            variant='standard' 
-                            id="order-status"
-                            IconComponent={ExpandMoreIcon}
-                            native
-                        >
-                            <option value={1}>Available Products</option>
-                            <option value={2}>Unavailable Products</option>
-                        </Select>
+                <Grid container spacing={3}>
+                    <Grid item xs={10} className="orderDashboard">
+                        <h2>Products</h2>
+                        <div className="orderListDropdown">
+                            <h3>Showing All :</h3>
+                            <Select
+                                defaultValue=""
+                                variant='standard'
+                                id="order-status"
+                                IconComponent={ExpandMoreIcon}
+                                native
+                            >
+                                <option value={1}>Available Products</option>
+                                <option value={2}>Unavailable Products</option>
+                            </Select>
+                        </div>
                     </Grid>
                     <Grid item xs={2} className="orderDropdown customerDropdown">
                         <Button variant="outlined" onClick={this.handleModalShow}>
@@ -134,23 +137,23 @@ class ProductDashboard extends React.Component{
                         </Button>
                     </Grid>
                     <Grid item xs={12} className="orderFilters productFilters">
-                        { this.state.advanceProductFilter ? 
+                        {this.state.advanceProductFilter ?
                             <div className="orderAdvanceFilters">
                                 {this.productFilterTextField()}
-                                <CancelIcon onClick={this.handleAdvanceFilter}/>
+                                <CancelIcon onClick={this.handleAdvanceFilter} />
                             </div>
                             :
                             <div className="orderFilterSearch">
-                                <IconButton  aria-label="menu" className="searchIcon">
+                                <IconButton aria-label="menu" className="searchIcon">
                                     <SearchIcon />
                                 </IconButton>
                                 <InputBase className="searchBar"
                                     placeholder="Search Product"
                                 />
-                                <Divider  orientation="vertical" />
-                                <IconButton  aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
-                                    <FilterListIcon  />
-                                </IconButton> 
+                                <Divider orientation="vertical" />
+                                <IconButton aria-label="directions" onClick={this.handleAdvanceFilter} className="filterOption">
+                                    <FilterListIcon />
+                                </IconButton>
                             </div>
                         }
                     </Grid>
@@ -158,7 +161,7 @@ class ProductDashboard extends React.Component{
                         <p onClick={this.handleProductColumnFilterView} aria-describedby='simple-popover'>Customise Columns</p>
                     </Grid>
                     <Grid item xs={12} className="orderHistoryTableContainer productTableContainer">
-                        { this.state.productColumnListView &&
+                        {this.state.productColumnListView &&
                             <Popover
                                 ref={this.wrapperRef}
                                 id='simple-popover'
@@ -167,12 +170,12 @@ class ProductDashboard extends React.Component{
                                 onClose={this.state.handleProductColumnFilterView}
                                 onClick={this.handleClose}
                                 anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center',
+                                    vertical: 'bottom',
+                                    horizontal: 'center',
                                 }}
                                 transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'center',
+                                    vertical: 'top',
+                                    horizontal: 'center',
                                 }}
                             >
                                 <div className="productColumnListContainer" ref={this.setElementRef}>
@@ -181,7 +184,7 @@ class ProductDashboard extends React.Component{
                                             List Of Columns
                                         </Grid>
                                         <Grid item xs={1}>
-                                            <CloseIcon onClick={this.handleProductColumnFilterView}/>
+                                            <CloseIcon onClick={this.handleProductColumnFilterView} />
                                         </Grid>
                                     </div>
                                     <div className="productColumnListCheckbox">
@@ -190,7 +193,7 @@ class ProductDashboard extends React.Component{
                                 </div>
                             </Popover>
                         }
-                        <ProductList productColumn={this.state.productColumnList}/>
+                        <ProductList productColumn={this.state.productColumnList} />
                     </Grid>
                 </Grid>
             </>

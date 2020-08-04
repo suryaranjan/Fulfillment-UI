@@ -3,7 +3,7 @@ import Navbar from '../navbar/navbar';
 import CustomerDashboard from '../customer/customerDashboard';
 import OrderDashboard from '../order/orderDashboard';
 import Container from '@material-ui/core/Container';
-import { CUSTOMER_DASHBOARD, ORDER_DASHBOARD, CREATE_ORDER,
+import { CUSTOMER_DASHBOARD, ORDER_DASHBOARD, CREATE_ORDER, FULFILLMENT_DASHBOARD, 
      CUSTOMER_DETAILS, PRODUCT_DASHBOARD, USER_DASHBOARD } from '../../constants/routesConstant';
 import {Switch,  Route } from "react-router-dom";
 import Footer from '../Footer/footer'
@@ -37,6 +37,9 @@ class Dashbaord extends React.Component{
                             {/* Order Dashboard */}
                             <Route exact  path={ORDER_DASHBOARD} component={OrderDashboard} />
                             <Route exact  path={CREATE_ORDER} component={OrderDashboard} />
+
+                            {/* Fulfillment Dashboard */}
+                            <Route exact  path={FULFILLMENT_DASHBOARD} component={OrderDashboard} />
 
                             {/* Customer Dashbaord */}
                             <Route exact  path={CUSTOMER_DASHBOARD} component={CustomerDashboard}/>
