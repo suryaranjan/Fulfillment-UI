@@ -35,13 +35,20 @@ class OrderDashboard extends React.Component {
         }
     }
 
-    componentDidMount() {
-        Service.getAllOrders().then((data) => {
-            this.setState({
-                orderListData: data.data.Response
-            })
-        })
+    static getDerivedStateFromProps(props, state){
+        if(props.orderList && props.orderList.length !== state.orderListData.length){
+            return {
+                ...state,
+                orderListData: props.orderList
+            }
+        }
+        return {
+            ...state
+        }
+    }
 
+    componentDidMount() {
+        this.props.getAllOrderList();
     }
 
     handleFulfillModalShow = (orderId) => {
@@ -63,6 +70,13 @@ class OrderDashboard extends React.Component {
     handleOrderListFilterChange = (e) => {
         this.setState({
             orderListFilterSelected: e.target.value
+        })
+    }
+
+    handleOrderPlacedModalView = () => {
+        this.setState({
+            createOrderModalView: false,
+            showOrderPlaced: true
         })
     }
 
@@ -129,6 +143,7 @@ class OrderDashboard extends React.Component {
     }
 
     render() {
+        
         return (
             <>
                 {this.state.createOrderModalView ?

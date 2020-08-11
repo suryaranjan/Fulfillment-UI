@@ -73,7 +73,10 @@ const OrderHistoryTable = (props) => {
                                 <TableCell align="left">{`$${row.TotalPlatformFee}`}</TableCell>
                                 <TableCell align="left">{`$${row.TotalAmount}`}</TableCell>
                                 <TableCell align="center" className="fulfillmentAction" >
-                                    <div className="fulfillmentTableAction" onClick={() => props.fulfillOrder(row)}>
+                                    <div className="fulfillmentTableAction" onClick={(e) => {
+                                        e.stopPropagation();
+                                        props.fulfillOrder(row);
+                                    }}>
                                         <AssignmentTurnedInIcon />
                                         <span>Fulfill Order</span>
                                     </div>
@@ -82,7 +85,7 @@ const OrderHistoryTable = (props) => {
                         ))}
                         {emptyRows > 0 && (
                             <TableRow >
-                                <TableCell colSpan={12} />
+                                <TableCell align="center" colSpan={12}>No Order Found</TableCell>
                             </TableRow>
                         )}
                     </TableBody>

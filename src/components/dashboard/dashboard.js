@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
 import CustomerDashboard from '../customer/customerDashboard';
-import OrderDashboard from '../order/orderDashboard';
+import OrderDashboardContainer from '../../containers/orderDashboardContainer'; 
 import Container from '@material-ui/core/Container';
-import { CUSTOMER_DASHBOARD, ORDER_DASHBOARD, CREATE_ORDER, FULFILLMENT_DASHBOARD, 
+import { CUSTOMER_DASHBOARD, ORDER_DASHBOARD, FULFILLMENT_DASHBOARD, 
      CUSTOMER_DETAILS, PRODUCT_DASHBOARD, USER_DASHBOARD } from '../../constants/routesConstant';
 import {Switch,  Route } from "react-router-dom";
 import Footer from '../Footer/footer'
@@ -35,11 +35,10 @@ class Dashbaord extends React.Component{
                     <Container maxWidth="xl"  className="dashboardContainer" >
                         <Switch>
                             {/* Order Dashboard */}
-                            <Route exact  path={ORDER_DASHBOARD} component={OrderDashboard} />
-                            <Route exact  path={CREATE_ORDER} component={OrderDashboard} />
+                            <Route exact  path={ORDER_DASHBOARD} component={OrderDashboardContainer} />
 
                             {/* Fulfillment Dashboard */}
-                            <Route exact  path={FULFILLMENT_DASHBOARD} component={OrderDashboard} />
+                            <Route exact  path={FULFILLMENT_DASHBOARD} component={OrderDashboardContainer} />
 
                             {/* Customer Dashbaord */}
                             <Route exact  path={CUSTOMER_DASHBOARD} component={CustomerDashboard}/>

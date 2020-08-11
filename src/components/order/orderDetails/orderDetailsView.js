@@ -38,7 +38,7 @@ const OrderDetailsModalView = (props) => {
                         <div className="verticalLine"></div>
                         <p>{"PURE COLLECTIVES"}</p>
                         <p>{"DRAFT"}</p>
-                        <CloseIcon/>
+                        <CloseIcon onClick={props.modalClose}/>
                     </Grid>
                     <Divider/>
                     <Grid xs={12} item className="orderModalTabActionContainer">
