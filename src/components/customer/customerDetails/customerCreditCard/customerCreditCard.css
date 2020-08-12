@@ -1,0 +1,79 @@
+/* Customer Credit Card */
+.customerCreditCardEditLogo svg.MuiSvgIcon-root {
+    float: right;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+.customerCreditCard{
+    padding: 10px;
+}
+.customerCreditCardHeader{
+    padding: 15px 20px;
+    color: #808080;
+    font-size: 18px;
+}
+h2.customerCreditCardDetails{
+    margin: auto;
+    color: #333333;
+    width: 100%;
+    text-align: center;
+}
+h4.customerCreditCardDetails{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    margin-top: 17px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333333;
+}
+h4.customerCreditCardDetails span{
+    font-size: 13px;
+    margin-right: 18px;
+    letter-spacing: 1px;
+}
+.customerCreditCardFooter{
+    display: flex;
+    padding-top: 17px !important;
+}
+.customerCreditCardFooter p{
+    margin: 0px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #dae3e5;
+}
+.customerCreditCardFooter svg.MuiSvgIcon-root{
+    font-size: 20px;
+    color: #DAE3E5;
+}
+.customerCreditCardFooterLogo.MuiGrid-item {
+    padding: 0px;
+    margin: 0px;
+    margin-top: -14px
+}
+.customerCreditCardFooterLogo img{
+    height: 100%;
+    width: 75%;
+}
+
+/* Customer Credit Card */
+.customerCreditCardReferencezNote{
+    margin-top: 20px !important;
+}
+.customerAddressFormButton.MuiGrid-item.MuiGrid-grid-xs-12.customerCrediCardFormButton
+{
+    background: #EBF8FA;
+    bottom: -91px;
+}
+.orderDetailsInfo .customerInfoContainer .customerAddressFormButton.MuiGrid-item.MuiGrid-grid-xs-12.customerCrediCardFormButton {
+    bottom: -112px;
+}
+.customerCreditCardReferencezNote .MuiOutlinedInput-input{
+    border: 1px #505050;
+    border-style: dashed;
+    border-radius: 5px;
+}
+.customerAddressFormEdit .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-endAdornment{
+    right: 0px;
+}

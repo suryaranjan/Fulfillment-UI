@@ -1,0 +1,153 @@
+/* Customer order advance filter */
+.customerOrderFilters div.MuiFormControl-root{
+    width: 20%;
+}
+.customerOrderFilters .email{
+    width: 25%;
+}
+.customerOrderFilters .orderFiltersAutoComplete {
+    width: 20%;
+}
+.customerOrderFilters .orderFiltersAutoComplete div.MuiFormControl-root{
+    width: 100%;
+}
+
+/* Customer Order card View */
+
+.customerOrderList .customerOrderCardContainer.MuiPaper-elevation3{
+    width: 100%;
+    margin: auto;
+    margin: 8px auto;
+    cursor: pointer;
+    box-shadow: 0px -1px 0px -1px #36B0C9, 0px 1px 3px 0px #36B0C9, 0px 0px 1px 0px #36B0C9;
+}
+.customerOrderFirstDetails{
+    display: flex;
+    cursor: pointer;
+    padding: 12px 20px !important;
+}
+.customerOrderFirstDetails p{
+    margin: 0px;
+    color: #484848;
+    font-size: 15px;
+    font-weight: 500;
+}
+.customerOrderFirstDetails .verticalLine{
+    width: 1px;
+    vertical-align: middle;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+    border-left: 2px solid #36B0C9;
+}
+.customerOrderFirstDetails p.partnerTag{
+    color: #484848;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.customerOrderFirstDetails p.partnerTag.orderStatusTag{
+    margin-left: auto;
+}
+.customerOrderFirstDetails a{
+    color: #0075E2;
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.customerOrderShippingLogo{
+    width: 5%;
+}
+.customerOrderShippingLogo img{
+    width: 100%;
+}
+.customerOrderCardContainer .customerOrderCard .MuiDivider-root{
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid #B4E2EB;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px 0px 20px !important;
+    border-right: 1px solid #B4E2EB;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails:last-child{
+    border: none;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails p.customerHeadTag{
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0px 5px 0px;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails p.customerHeadTag:last-child{
+    color: #666666;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0px 10px 0px;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails p.customerHeadTag span{
+    margin: 0px 10px;
+    font-size: 18px;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails p.orderInfoTag:first-child{
+    font-size: 25px;
+    font-weight: 700;
+    color: #0D2C32;
+    margin-bottom: 5px;
+}
+.customerOrderSecondDetails.customerOrderFirstDetails p.orderInfoTag:last-child{
+    font-size: 15px;
+    font-weight: 500;
+    color: #0D2C32;
+    margin-top: 5px;
+}
+
+.customerOrderAction{
+    display: flex;
+    justify-content: space-evenly;
+}
+.customerOrderCardContainer .customerOrderCard{
+    width: 100%;
+    margin: auto;
+    
+}
+.customerOrderCardWithAction {
+    width: 100%;
+    margin: auto;
+    background: #EBF8FA;
+}
+.customerOrderAction div.customerOrderActionItem{
+    text-align: center;
+}
+.customerOrderAction div.customerOrderActionItem p{
+    margin: 0px auto;
+}
+
+.customerOrderList.MuiGrid-item{
+    height: 57vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5px;
+    width: 100%;
+    padding: 0px 12px 12px 12px !important;
+    width: 100%;
+    margin-top: 10px;
+}
+.customerOrderList::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+}
+.customerOrderList::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.customerOrderList::-webkit-scrollbar-thumb
+{
+	background-color: #D8A0B0;
+}
+.customerOrderFilters.orderFilters .MuiAutocomplete-root{
+    width: 18%;
+}

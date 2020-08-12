@@ -1,0 +1,258 @@
+.fulfillModalCustomerInfo.orderModalCustomerInfo p:last-of-type{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+.fulfillModalCustomerInfo.orderModalCustomerInfo p.error:last-of-type{
+    color: #ff0000f2;
+}
+.fulfillModalCustomerInfo.orderModalCustomerInfo{
+    padding-top: 8px;
+}
+.fulfillModalCustomerInfo.orderModalCustomerInfo:first-child{
+    padding: 12px 12px 0px 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0E2F35;
+}
+.fulfillModalCustomerInfo.orderModalCustomerInfo svg.MuiSvgIcon-root{
+    align-self: center;
+    margin-left: auto;
+    cursor: pointer;
+}
+.fulfillModalProductContainer.MuiGrid-spacing-xs-3 > .MuiGrid-item.productTabContainer{
+    border: 1px solid #1B5865;
+    margin: 0px 13px 10px;
+    border-radius: 5px;
+}
+.fulfillmentProductTab.productTab{
+    padding: 0px 0px 0px 10px;
+    min-height: 60px;
+}
+.fulfillmentProductTab.productTab > div{
+    align-self: flex-start;
+    height: 100%;
+}
+.fulfillmentProductTab.productTab .productDetails.productName{
+    width: 35%;
+}
+.fulfillmentProductTab.productTab .productDetails {
+    width: 10%;
+}
+.fulfillmentProductTab.productTab .productDetails.lotSection{
+    width: 25%;
+    word-break: break-word;
+}
+.fulfillmentProductTab .productDetails{
+    padding: 2px 3px;
+}
+.fulfillmentProductTab .productDetails span{
+    font-size: 13px;
+    font-weight: 600;
+    color: #4848489c;
+}
+.fulfillmentProductTab .productDetails.undoAction{
+    width: 50px;
+    height:auto ;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    opacity: 6.;
+    background: #0000001c;
+}
+.fulfillmentProductTab .productDetails.undoAction svg.MuiSvgIcon-root{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #1B5865;
+    margin-top: auto;
+    transition: 50%;
+}
+.fulfillmentProductTab .productDetails.undoAction p{
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+    color: #1B5865;
+}
+.fulfillInprogress{
+    background: #FFE9EC;
+}
+.fulfilledProduct{  
+    background: #C2DED5;
+}
+.fade {
+    color: #4848489c !important;
+}
+.fulfillModalProductContainer.productTabContainer,.productCodeContainer.fulfillModalProductContainer{
+    flex-basis: calc(100% - 24px);
+    margin: auto;
+    border: 1px solid #288497;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.productCodeContainer.fulfillModalProductContainer{
+    display: flex;
+    padding: 0px 12px !important;
+}
+.productCodeContainer.fulfillModalProductContainer .inputProductCode{
+    width: 22%;
+    padding: 7px 0px 12px;
+    align-self: center;
+}
+.productCodeContainer.fulfillModalProductContainer .inputProductCode p{
+    margin: 0px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0D2C32;
+    margin-bottom: 3px;
+}
+.inputProductCode > div div.searchProductBar input{
+    text-align: center;
+}
+.productCodeContainer.fulfillModalProductContainer .inputProductCode > div{
+    display: flex;
+    padding: 0px 0px 0px 7px;
+    border: 1px solid #505050;
+    width: 90%;
+    margin: auto;
+    border-radius: 3px;
+}
+.productCodeContainer.fulfillModalProductContainer .inputProductCode > div div.searchProductBar{
+    width: 85%;
+    border-right: 1px solid #505050;
+}
+.codeSearchIcon.MuiButtonBase-root{
+    padding: 10px;
+}
+.codeSearchIcon.MuiButtonBase-root span{
+    text-align: center;
+}
+.codeSearchIcon.MuiButtonBase-root span svg.MuiSvgIcon-root{
+    color: #2E96AB;
+}
+.fulfillModalProductContainer.productCodeContainer .MuiDivider-root.MuiDivider-vertical{
+    width: 1px;
+    height: auto;
+    border-right: 1px solid #288497;
+    margin: 0px 5px;
+}
+.lot p.MuiFormHelperText-contained{
+    margin: auto;
+}
+
+.lotAllotmentContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 23%);
+    min-height: 130px;
+}
+.lotAllotmentContainer .lotAlotment{
+    justify-content: space-around;
+    display: flex;
+    width: 30%;
+    align-self: flex-start;
+    margin-bottom: 5px;
+    height: 100px;
+}
+.lotAllotmentContainer .lotAlotment.notLastLot{
+    width: 21%;
+    margin-right: 5px;
+}
+.lotAllotmentContainer .lotAlotment svg.MuiSvgIcon-root:first-child{
+    font-size: 12px;
+    padding: 0px;
+    border-radius: 50%;
+    border-style: solid;
+    color: #ff0000b8;
+    border-color: #ff0000b8;
+}
+.lotAllotmentContainer .lotAlotment.notLastLot .lot{
+    width: 48%;
+}
+.lotAllotmentContainer .lotAlotment.notLastLot .lot:last-child{
+    width: 40%;
+}
+.lotAllotmentContainer > p{
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+.lotAllotmentContainer > p:first-child{     
+    font-size: 17px;
+    font-weight: 600;
+    color: #0D2C32;
+    margin-bottom: 3px;
+}
+.lotAllotmentContainer > p span{
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff0000de;
+    margin: 0px 0px 0px 4px;
+    margin-left: 30px;
+}
+.lotAllotmentContainer .lotAlotment .lot{
+    display: flex;
+    flex-wrap: wrap;
+    width: 39%;
+    padding: 5px 0px;
+}
+.lotAllotmentContainer .lotAlotment .lot:last-child{
+    width: 30%;
+}
+.lotAllotmentContainer .lotAlotment .lot label{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    color: #48484894;
+    font-weight: 600;
+    height: 23px;
+    
+}
+.fulfillmentTableAction{
+    cursor: pointer;
+}
+.lot .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: #505050bf;
+}
+.lotAllotmentContainer .lotAlotment .lot .MuiFormControl-root.MuiTextField-root {
+    height: 60px;
+}
+.lotAllotmentContainer .lotAlotment .lot .MuiTextField-root .MuiInputBase-root input.MuiOutlinedInput-input{
+    padding: 14px;
+}
+.lotAllotmentContainer .lotAlotment svg.MuiSvgIcon-root{
+    align-self: center;
+    border: 1px dashed #2E96AB;
+    padding: 10px;
+    color: #2E96AB;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.fulfillmentModalFooter.orderModalFooter{
+    padding: 14px 12px !important;
+    border-radius: 0px 0px 5px 5px;
+}
+.fulfillmentModalFooter.orderModalFooter .footerActionItem:first-child p {
+    font-weight: bold;
+    font-size: 17px;
+    color: #1B5865;
+    text-decoration: underline;
+    text-decoration-color: #1B5865;
+}
+.fulfillmentModalFooter.orderModalFooter .footerActionItem p:last-child {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1B5865;
+}
+.fulfillmentModalFooter.orderModalFooter .footerActionItem:last-child p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1B5865;
+}
+.fulfillmentModalFooter.orderModalFooter .footerActionItem.submitOrder{
+    margin-left: auto;
+    font-size: 17px;
+    font-weight: bold;
+    color: #0D2C32;
+}

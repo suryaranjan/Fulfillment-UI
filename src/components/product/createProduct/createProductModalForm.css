@@ -1,0 +1,46 @@
+.customerInfoEditForm.productModalInfoForm .productModalFormBox:first-child{
+    width: 60%;
+}
+.customerInfoEditForm.productModalInfoForm .productModalFormBox{
+    width: 18%;
+}
+.customerInfoEditForm.productModalInfoForm{
+    display: flex;
+    justify-content: space-between;
+}
+.productInventoryEditForm.customerInfoEditForm{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding-bottom: 0px !important;
+}
+/* .productFormCheckBox{
+    display: flex;
+} */
+.productInventoryEditForm > div{
+    width: 100%;
+    display: flex;
+}
+.productFormCheckBox {
+    margin-top: 15px;
+}
+.customerAddressFormBox.productInventoryForm {
+    width: 15%;
+    margin-right: 10px;
+}
+.productInventoryEditForm .customerAddressFormBox.productInventoryForm:last-child {
+    width: 25%;
+}
+.customerAddressFormBox.productInventoryForm:last-child .productSelfLife{
+    display: flex;
+    justify-content: space-between;
+}
+.customerInfoEditForm.productInventoryEditForm .productSelfLife > div:first-child{
+    width: 55%;
+}
+.customerInfoEditForm.productInventoryEditForm .productSelfLife > div:last-child{
+    width: 42%;
+}
+.productModalFormButton.customerModalFormButton{
+    margin-top: 10px;
+}

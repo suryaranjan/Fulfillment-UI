@@ -1,0 +1,51 @@
+.userModalForm.MuiGrid-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px ;
+}
+.userModalForm .customerAddressFormBox.customerModalFormBox{
+    width: 32%;
+}
+.userModalForm .customerAddressFormBox.customerModalFormBox.question, .customerAddressFormBox.customerModalFormBox.answer{
+    width: 49%;
+}
+.userModalForm .customerAddressFormBox.customerAttachment.userModalSignature{
+    width: 32%;
+    margin-bottom: 10px;
+}
+.customerModalFormContainer .userModalForm.customerModalForm{
+    top: 4%;
+    height: 80vh;
+}
+.userModalForm.customerModalForm > div:first-child{
+    width: 100%;
+}
+.userModalForm.customerModalForm > div:first-child > div{
+    display: flex;
+}
+.userModalFormCheckBox label{
+    color: #1B5865;
+    font-size: 15px;
+}
+.userModalFormCheckBox span span svg.MuiSvgIcon-root{
+    font-size: 20px;
+    color: #1B5865;
+}
+.userModalFormCheckBoxContainer.userModalForm{
+    display: flex;
+    justify-content: flex-start;
+}
+.userModalFormCheckBox{
+    margin-right: 30px;
+}
+.userModalFormCheckBox span{
+    padding-left: 0px;
+}
+.userModalForm.customerModalForm .customerAddressFormButton.customerModalFormButton{
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+    border-top: 1px solid #288497;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #EBF8FA;
+}
